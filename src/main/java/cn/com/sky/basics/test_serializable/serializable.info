@@ -1,0 +1,13 @@
+对象序列化方式：
+
+1.实现Serializable接口
+a> transient字段不会序列化
+b> static字段不会序列化
+c> 实现writeObject与readObject方法实现自定义序列化
+
+2.实现Externalizable接口
+a> 实现writeExternal与readExternal方法实现自定义序列化
+
+
+
+

@@ -1,0 +1,5 @@
+Hello $name! Welcome to $site world
+
+#foreach( $product in $list )
+<li>$product</li>
+#end

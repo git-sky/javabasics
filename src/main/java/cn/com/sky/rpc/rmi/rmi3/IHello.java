@@ -1,4 +1,4 @@
-package cn.com.sky.rmi;
+package cn.com.sky.rpc.rmi.rmi3;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

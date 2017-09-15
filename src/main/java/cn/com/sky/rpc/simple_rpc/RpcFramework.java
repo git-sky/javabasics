@@ -127,21 +127,21 @@ public class RpcFramework {
 		}
 		System.out.println("Get remote service " + interfaceClass.getName() + " from server " + host + ":" + port);
 
-		// 动态代理
+		// 动态代理（jdk原生，javassist，cglib等）
 		return (T) Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class<?>[] { interfaceClass }, new InvocationHandler() {// jdk动态代理,内部类
 					public Object invoke(Object proxy, Method method, Object[] arguments) throws Throwable {
-						// 1.网络连接
+						// 1.网络连接（jdk原生，netty，mina等），IO通信模型（两种模型：BIO，NIO）
 						Socket socket = new Socket(host, port);
 						try {
-							// 2.序列化
+							// 2.序列化(jdk原生、kryo、hessian、protobuf、thrift、avro等)
 							ObjectOutputStream output = new ObjectOutputStream(socket.getOutputStream());
 							try {
-								// 3.协议编码
-								output.writeUTF(interfaceClass.getName());
-								output.writeUTF(method.getName());
-								output.writeObject(method.getParameterTypes());
-								output.writeObject(arguments);
-								
+								// 3.协议编码(消息数据结构)
+								output.writeUTF(interfaceClass.getName());// 接口名
+								output.writeUTF(method.getName());// 方法名
+								output.writeObject(method.getParameterTypes());// 参数类型
+								output.writeObject(arguments);// 参数
+
 								ObjectInputStream input = new ObjectInputStream(socket.getInputStream());
 								try {
 									Object result = input.readObject();

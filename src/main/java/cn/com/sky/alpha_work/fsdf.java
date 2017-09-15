@@ -1,6 +1,10 @@
 package cn.com.sky.alpha_work;
 
-import java.util.UUID;
+import java.lang.reflect.Method;
+import java.util.Collection;
+import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
 
 public class fsdf {
 
@@ -22,5 +26,12 @@ public class fsdf {
 
 		System.out.println(3 % 2);
 		System.out.println(3.2 % 2);
+		new fsdf().say();
 	}
+
+	public void say() {
+		System.out.println(getClass());
+		System.out.println(getClass().getName());
+	}
+
 }

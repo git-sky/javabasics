@@ -18,19 +18,41 @@ package cn.com.sky.basics.exceptions;
 public class TestException {
 
 	public static void main(String[] args) {
-		new TestException().getError();
-		new TestException().getRuntimeException();
+
+		// 不用捕获
+		try {
+			new TestException().getError();
+		} catch (Error e) {
+			System.out.println("Error ");
+			e.printStackTrace();
+			System.out.println("Error ");
+		}
+
+		// 不用捕获
+		try {
+			new TestException().getRuntimeException();
+		} catch (Exception e) {
+			System.out.println("RuntimeException ");
+			e.printStackTrace();
+			System.out.println("RuntimeException ");
+		}
+
+		// 必须捕获
 		try {
 			new TestException().getException();
 		} catch (Exception e) {
+			System.out.println("Exception ");
 			e.printStackTrace();
 		}
+
+		// 必须捕获
 		try {
 			new TestException().getThrowable();
 		} catch (Throwable e) {
+			System.out.println("Throwable ");
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	private void getError() {

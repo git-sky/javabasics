@@ -28,7 +28,8 @@ public class TestMapSortValue {
 			@Override
 			public int compare(Entry<String, Long> o1, Entry<String, Long> o2) {
 				// return o1.getValue().compareTo(o2.getValue());
-				return o2.getValue().compareTo(o1.getValue());
+//				return o2.getValue().compareTo(o1.getValue());
+				return (int) (o2.getValue() - o1.getValue());
 			}
 		});
 

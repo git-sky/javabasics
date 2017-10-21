@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
-	<property name="BASE_LOG_PATH" value="d:/my/logs/${projectName}" />
+	<property name="BASE_LOG_PATH" value="d:/my/logs/logbackss" />
 
 	<!-- warn -->
 	<appender name="warn_file"

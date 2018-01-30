@@ -2,7 +2,7 @@ package cn.com.sky.basics;
 
 public class TestMutil {
 
-	public static void main(String[] args) {
+	public static void   main(String[] args) {
 		/**
 		 * test A
 		 * 

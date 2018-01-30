@@ -7,6 +7,8 @@ import cn.com.sky.rpc.simple_rpc.service.HelloServiceImpl;
 
 /**
  * 服务器
+ *
+ * 导出服务
  * 
  */
 public class Server {

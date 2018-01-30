@@ -11,5 +11,6 @@ public class Test {
 		jsonParam.put("templateId", "3047");
 		jsonParam.put("money", "123");
 		System.out.println(jsonParam);
+
 	}
 }

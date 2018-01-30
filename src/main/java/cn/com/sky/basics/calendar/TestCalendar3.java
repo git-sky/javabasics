@@ -11,29 +11,32 @@ public class TestCalendar3 {
 
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-	public static void main(String[] args) {
-
-		TestCalendar3 tc = new TestCalendar3();
-		//
-		// tc.test1();
-		// tc.test2();
-		// tc.test3();
-		// tc.test4();
-		// tc.test5();
-		// tc.test6();
-		tc.test7();
-	}
-
-	void test1() {
+	@Test
+	public void test1() {
 		Calendar c = Calendar.getInstance();
+
+		c.set(Calendar.HOUR_OF_DAY, 24);
+		c.set(Calendar.MINUTE,0); // ��ȡ��ǰ����
+		c.set(Calendar.SECOND,0); // ��ȡ��ǰ��
+		
+		int ahour = c.get(Calendar.HOUR_OF_DAY); // 24小时制
+		
+		System.out.println(ahour);
+
+
 		int year = c.get(Calendar.YEAR); // ��ȡ��
+
 		int month = c.get(Calendar.MONTH) + 1; // ��ȡ�·ݣ�0��ʾ1�·�
 		int day = c.get(Calendar.DAY_OF_MONTH); // ��ȡ��ǰ����
 		int first = c.getActualMinimum(Calendar.DAY_OF_MONTH); // ��ȡ������С����
 		int last = c.getActualMaximum(Calendar.DAY_OF_MONTH); // ��ȡ�����������
-		int hour = c.get(Calendar.HOUR_OF_DAY); // ��ȡ��ǰСʱ
+		int hour = c.get(Calendar.HOUR_OF_DAY); // 24小时制
 		int min = c.get(Calendar.MINUTE); // ��ȡ��ǰ����
 		int sec = c.get(Calendar.SECOND); // ��ȡ��ǰ��
+
+		System.out.println(c.get(Calendar.HOUR));
+
+		System.out.println("now:" + year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec);
 
 		int dayY = c.get(Calendar.DAY_OF_YEAR); // ����ڼ���
 		System.out.println(dayY);

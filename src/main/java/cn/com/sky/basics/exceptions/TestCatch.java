@@ -15,8 +15,8 @@ public class TestCatch {
 		try {
 			x = 1;
 			System.out.println("try:" + x);
-			 throw new Exception();
-//			return x;
+//			 throw new Exception();
+			return x;
 
 		} catch (Exception e) {
 			x = 2;
@@ -26,7 +26,7 @@ public class TestCatch {
 		} finally {
 			x = 3;
 			System.out.println("finally:" + x);
-			// return x;// 不能在finally块中使用return，finally块中的return返回后方法结束执行，不会再执行try块中的return语句。
+			 return x;// 不能在finally块中使用return，finally块中的return返回后方法结束执行，不会再执行try块中的return语句。
 		}
 	}
 }

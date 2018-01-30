@@ -1,13 +1,9 @@
 package cn.com.sky.collections.list;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-
 import org.apache.storm.guava.collect.Lists;
 import org.junit.Test;
+
+import java.util.*;
 
 /**
  * 底层是数组结构， 初始化大小10，每次扩容50%，如果不够，直接扩容到需要的大小。
@@ -60,6 +56,7 @@ public class TestArrayList {
 
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
+			// list.remove(i);
 		}
 
 		System.out.println("---------------------------");
@@ -92,7 +89,7 @@ public class TestArrayList {
 	 */
 	@Test
 	public void testSubList() {
-		List<Integer> list = new ArrayList<>();
+		ArrayList<Integer> list = new ArrayList<>();
 		for (int i = 0; i < 10; i++) {
 			list.add(i);
 		}
@@ -105,7 +102,11 @@ public class TestArrayList {
 
 		List<Integer> subList = list.subList(3, 5);
 
-		// list.add(3);//会产生ConcurrentModificationException异常
+		list.add(3);// 会产生ConcurrentModificationException异常
+
+		for (Iterator<Integer> iter = subList.iterator(); iter.hasNext();) {
+			System.out.println(iter.next());
+		}
 
 		subList.add(4);
 
@@ -124,8 +125,12 @@ public class TestArrayList {
 	@Test
 	public void test() {
 
-		List list = Lists.newArrayList();
+		ArrayList list = Lists.newArrayList();
 		System.out.println(list.get(0));
+		//
+		// ArrayList list2;
+		// list.retainAll(list2);
+		// list.contains(o)
 
 	}
 }

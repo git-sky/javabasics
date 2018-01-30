@@ -1,10 +1,10 @@
 package cn.com.sky.collections.list;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.ListIterator;
-
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import org.junit.Test;
+
+import java.util.*;
 
 /**
  * 带有头指针和尾指针的双向链表实现的双端队列。
@@ -51,4 +51,19 @@ public class TestLinkedList {
 
 		}
 	}
+
+	@Test
+	public  void test(){
+        Map<String, String> map = Maps.newLinkedHashMap();
+        map.put("3","c");
+        map.put("1","a");
+        map.put("4","d");
+        map.put("5","e");
+        map.put("2","b");
+
+        List<String> sortList = Lists.newLinkedList(map.values());
+        for (String str:sortList){
+            System.out.println(str);
+        }
+    }
 }

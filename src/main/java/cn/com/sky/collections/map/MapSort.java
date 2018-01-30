@@ -16,8 +16,8 @@ import java.util.TreeMap;
 public class MapSort {
 
 	public static void main(String[] args) {
-		// MapSort.TreeMapSortByKey();
-		// MapSort.TreeMapSortByValue();
+		 MapSort.TreeMapSortByKey();
+		 MapSort.TreeMapSortByValue();
 		MapSort.MapSortByKey();
 		MapSort.MapSortByValue();
 	}
@@ -33,10 +33,10 @@ public class MapSort {
 				return o2.compareTo(o1);
 			}
 		});
-		map.put("c", "ccccc");
-		map.put("a", "aaaaa");
-		map.put("b", "bbbbb");
-		map.put("d", "ddddd");
+		map.put("c", "1");
+		map.put("a", "2");
+		map.put("b", "3");
+		map.put("d", "4");
 		for (String key : map.keySet()) {
 			System.err.println("key:" + key + "  value:" + map.get(key));
 		}

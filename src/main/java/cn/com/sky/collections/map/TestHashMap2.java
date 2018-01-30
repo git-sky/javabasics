@@ -29,6 +29,9 @@ public class TestHashMap2 {
 
 		m.putAll(m2);
 
+		m.get("b");
+		m.containsKey("b");
+
 		System.out.println("通过Map.entrySet遍历key和value");
 		for (Map.Entry<String, String> entry : m.entrySet()) {
 			System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());

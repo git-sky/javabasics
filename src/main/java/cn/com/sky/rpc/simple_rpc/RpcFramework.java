@@ -142,6 +142,7 @@ public class RpcFramework {
 								output.writeObject(method.getParameterTypes());// 参数类型
 								output.writeObject(arguments);// 参数
 
+                                //4、返回值result
 								ObjectInputStream input = new ObjectInputStream(socket.getInputStream());
 								try {
 									Object result = input.readObject();

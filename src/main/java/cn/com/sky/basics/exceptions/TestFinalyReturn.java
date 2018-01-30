@@ -26,13 +26,16 @@ public class TestFinalyReturn {
 
 		// System.out.println("return: " + test2());
 
-		System.out.println("return: " + test21());
+//		System.out.println("return: " + test21());
 
-		// System.out.println("return: " + test3());
+        System.out.println("return: " + test3());
 
 		System.out.println("return: " + Arrays.toString(test31()));
 
-		// System.out.println("return: " + test4());
+        System.out.println("return: " + test5());
+
+
+        // System.out.println("return: " + test4());
 
 	}
 
@@ -161,6 +164,24 @@ public class TestFinalyReturn {
 		}
 		return arr;
 	}
+
+
+    private static String test5() {
+        String arr = "abc";
+        System.out.println(arr);
+        try {
+            System.out.println("try...");
+            arr="try";
+            return arr;
+        } catch (Exception e) {
+            System.out.println("catch...");
+            arr="catch";
+        } finally {
+            System.out.println("finally...");
+            arr="finally";
+        }
+        return arr;
+    }
 
 	/**
 	 * <pre>

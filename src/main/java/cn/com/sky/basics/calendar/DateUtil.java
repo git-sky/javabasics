@@ -1,6 +1,7 @@
 package cn.com.sky.basics.calendar;
 
-import java.text.DateFormat;
+import com.google.common.base.Objects;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -11,6 +12,11 @@ public class DateUtil {
 		System.out.println(d);
 
 		Calendar c = Calendar.getInstance();
+		
+		
+		System.out.println(System.currentTimeMillis());
+		System.out.println(new Date().getTime());
+		System.out.println(Objects.equal(System.currentTimeMillis(),new Date().getTime()));
 
 	}
 

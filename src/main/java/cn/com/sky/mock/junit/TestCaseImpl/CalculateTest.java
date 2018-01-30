@@ -11,7 +11,6 @@ public class CalculateTest extends TestCase {
 		super.setUp();
 
 		// 做测试前的初始化工作
-
 		cal = new Calculate();
 
 	}
@@ -21,9 +20,7 @@ public class CalculateTest extends TestCase {
 		int result = cal.add(3, 4);
 
 		// 判断result和本来应该得到的结果是否相等
-
 		// 还有别的比较方法
-
 		assertEquals("与预期不符合!!", 7, result);
 
 	}
@@ -33,9 +30,7 @@ public class CalculateTest extends TestCase {
 		int result = cal.add(1, 4);
 
 		// 判断result和本来应该得到的结果是否相等
-
 		// 还有别的比较方法
-
 		assertEquals("与预期不符合!!", 5, result);
 
 	}
@@ -45,7 +40,6 @@ public class CalculateTest extends TestCase {
 		super.tearDown();
 
 		// 做测试后的善后工作
-
 		cal = null;
 	}
 

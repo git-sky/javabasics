@@ -23,7 +23,9 @@ class SingleTon {
 	private SingleTon() {
 		count1++;
 		count2++;
-	}
+        System.out.println("count1:"+count1);
+        System.out.println("count2:"+count2);
+    }
 
 	public static SingleTon getInstance() {
 		return singleTon;

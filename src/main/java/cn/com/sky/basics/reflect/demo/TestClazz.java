@@ -27,8 +27,8 @@ public class TestClazz {
 		Class parentClazz = null;
 		Class sonClazz = null;
 		try {
-			parentClazz = Class.forName("cn.com.sky.basics.reflect.Parent");
-			sonClazz = Class.forName("cn.com.sky.basics.reflect.Son");
+			parentClazz = Class.forName("cn.com.sky.basics.reflect.demo.Parent");
+			sonClazz = Class.forName("cn.com.sky.basics.reflect.demo.Son");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}

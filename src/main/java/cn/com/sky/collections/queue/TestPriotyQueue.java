@@ -1,10 +1,9 @@
 package cn.com.sky.collections.queue;
 
-import java.util.Comparator;
+import org.junit.Test;
+
 import java.util.Iterator;
 import java.util.PriorityQueue;
-
-import org.junit.Test;
 
 /**
  * <pre>
@@ -31,6 +30,10 @@ public class TestPriotyQueue {
 		// });
 
 		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+
+//        PriorityBlockingQueue
+
+//        TransferQueue
 
 		for (int i = 10; i > 0; i--) {
 			pq.add(i);

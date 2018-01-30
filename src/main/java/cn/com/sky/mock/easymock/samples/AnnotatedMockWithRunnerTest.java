@@ -1,5 +1,6 @@
 package cn.com.sky.mock.easymock.samples;
 
+
 import org.easymock.EasyMockRunner;
 import org.easymock.EasyMockSupport;
 import org.easymock.Mock;

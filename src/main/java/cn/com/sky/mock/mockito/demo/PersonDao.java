@@ -2,7 +2,7 @@ package cn.com.sky.mock.mockito.demo;
 
 public interface PersonDao {
 
-	public Person fetchPerson(Integer personID);
+    Person fetchPerson(Integer personId);
 
-	public void update(Person person);
+    void update(Person person);
 }

@@ -1,19 +1,20 @@
 package cn.com.sky.mock.mockito.demo;
 
 public class Person {
-	private final Integer personID;
-	private final String personName;
 
-	public Person(Integer personID, String personName) {
-		this.personID = personID;
-		this.personName = personName;
-	}
+    private final Integer personId;
+    private final String personName;
 
-	public Integer getPersonID() {
-		return personID;
-	}
+    public Person(Integer personId, String personName) {
+        this.personId = personId;
+        this.personName = personName;
+    }
 
-	public String getPersonName() {
-		return personName;
-	}
+    public Integer getPersonId() {
+        return personId;
+    }
+
+    public String getPersonName() {
+        return personName;
+    }
 }

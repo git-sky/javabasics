@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
-	<property name="BASE_LOG_PATH" value="d:/my/logs/logbackss" />
+	<property name="BASE_LOG_PATH" value="/opt/logs" />
 
 	<!-- warn -->
 	<appender name="warn_file"
@@ -56,8 +56,8 @@
 	<!-- Console -->
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<!-- encoder 默认配置为PatternLayoutEncoder -->
-	<!-- <encoder> <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} 
-		- %msg%n</pattern> </encoder> -->
+	 <encoder> <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36}
+		 - %msg%n</pattern> </encoder>
 		<withJansi>true</withJansi>
     <encoder>
       <pattern>[%thread] %highlight(%-5level) %cyan(%logger{15}) - %msg %n</pattern>
@@ -77,6 +77,9 @@
 
 	<logger name="cn.com.sky.tools" level="warn" additivity="true" />
 	<!-- <logger name="cn.com.sky.tools.logback.demo1" level="INFO" /> -->
+
+	<logger name="cn.com.sky.exceptions" level="info" additivity="true" />
+
 
 	<root level="WARN">
 		<appender-ref ref="info_file" />

@@ -6,6 +6,7 @@ public class TestExp {
         try {
             testa();
         } catch (ExceptionA e) {
+//            e.printStackTrace();
             //对异常信息进行遍历，输出异常信息中的原始异常，直到找到最终的原始异常
             Throwable throwable = e;
             while (throwable != null) {

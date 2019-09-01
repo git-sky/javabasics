@@ -9,6 +9,7 @@ import java.util.Properties;
  * System.getProperty()方法。
  */
 public class TestSystemProperty {
+
     public static void main(String[] args) {
 
         Properties prop = System.getProperties();

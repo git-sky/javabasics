@@ -16,7 +16,7 @@ import java.io.Serializable;
  * 
  * 这些方法必须具有准确的方法签名：
  * private void writeObject(ObjectOutputStream stream) throws IOException;
- * private void readObject(ObjectInputStream stream) throws IOException,CalssNot  FoundException
+ * private void readObject(ObjectInputStream stream) throws IOException,CalssNotFoundException
  * 
  * 从设计的观点来看，现在事情变得真是不可思议。它们被定义成了 private ，这意思味着它们不能被这个类的其成员调用。
  * 然面，实际上我们并没有从这个类的其他方法中调用它们，而是 ObjectOutputStream 和 ObjectInputStream 对象的 writeObject() 和 readObject() 方法

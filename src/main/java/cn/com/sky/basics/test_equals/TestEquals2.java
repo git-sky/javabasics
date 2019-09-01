@@ -21,7 +21,7 @@ public class TestEquals2 {
 		Object obj = null;
 
 		System.out.println("test".equals(obj));
-		System.out.println(obj.equals("test"));// java.lang.NullPointerException
+//		System.out.println(obj.equals("test"));// java.lang.NullPointerException
 		System.out.println(Objects.equals(obj, "test"));
 		System.out.println(Objects.equals("test", obj));
 	}

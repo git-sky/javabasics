@@ -29,7 +29,7 @@ public class TestPriotyQueue {
 		// }
 		// });
 
-		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+		PriorityQueue<Integer> pq = new PriorityQueue<>();
 
 //        PriorityBlockingQueue
 
@@ -38,6 +38,8 @@ public class TestPriotyQueue {
 		for (int i = 10; i > 0; i--) {
 			pq.add(i);
 		}
+
+		System.out.println(pq);
 
 		del(pq);
 
@@ -65,9 +67,16 @@ public class TestPriotyQueue {
 			Object str = iterator.next();
 			System.out.println(str);
 		}
-		System.out.println("-------------------");
+		System.out.println("----------------------");
 		while (!pq.isEmpty()) {
 			System.out.println(pq.remove());
+		}
+
+		System.out.println("++++++++++++++++++++++");
+
+		for (Iterator iterator = pq.iterator(); iterator.hasNext();) {
+			Object str = iterator.next();
+			System.out.println(str);
 		}
 	}
 }

@@ -21,9 +21,7 @@ import org.apache.http.util.EntityUtils;
 
 /**
  * 模拟登陆知乎平台并设置
- * 
- * @author zxp
- * 
+ **
  */
 
 public class TestHttpClientWebLogin_zhihu {

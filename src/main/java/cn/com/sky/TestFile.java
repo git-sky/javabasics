@@ -3,10 +3,7 @@ package cn.com.sky;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * @Author: zhangxianpeng
- * @Date: 2018/8/22 16:12
- */
+
 public class TestFile {
 
     public static void main(String[] args) throws IOException {

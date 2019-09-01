@@ -14,8 +14,7 @@ import java.util.stream.Stream;
 public class TestStream {
 
 
-//        一、流的初始化与转换：
-
+    //        一、流的初始化与转换：
     @Test
     public void startStream() {
 

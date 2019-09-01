@@ -16,7 +16,7 @@ public class TestMapSort {
 		/**
 		 * Integer实现了 Comparable接口
 		 */
-		TreeMap<Integer, String> teMap = new TreeMap<Integer, String>();
+		TreeMap<Integer, String> teMap = new TreeMap<>();
 		teMap.put(10, "Value10");
 		teMap.put(3, "Value311");
 		teMap.put(1, "Value1");
@@ -34,7 +34,7 @@ public class TestMapSort {
 
 		// HashMap
 		System.out.println("------HashMap无序输出------");
-		HashMap<String, String> hsMap = new HashMap<String, String>();
+		HashMap<String, String> hsMap = new HashMap<>();
 		hsMap.put("10", "Value10");
 		hsMap.put("3", "Value3");
 		hsMap.put("1", "Value1");

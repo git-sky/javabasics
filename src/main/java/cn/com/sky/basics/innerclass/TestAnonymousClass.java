@@ -5,15 +5,15 @@ package cn.com.sky.basics.innerclass;
  */
 public class TestAnonymousClass {
 
-	public static void main(String args[]) {
+    public static void main(String args[]) {
 
-		MyInterface action = new MyInterface() {
-			public Object get() {
-				return "hhhhhh";
-			}
-		};
+        MyInterface action = new MyInterface() {
+            public Object get() {
+                return "haha";
+            }
+        };
 
-		System.out.println(action.get());
-	}
+        System.out.println(action.get());
+    }
 
 }

@@ -5,11 +5,6 @@ import javax.print.*;
 import javax.print.attribute.*;
 import javax.print.attribute.standard.*;
 
-/**
- * 
- * @author tianmaochun
- * 
- */
 public class PrintImage {
 	
 	public static void main(String args[]){

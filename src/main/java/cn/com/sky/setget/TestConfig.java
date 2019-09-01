@@ -5,7 +5,6 @@ public class TestConfig {
 	public static void main(String[] args) {
 
 		new TestConfig().say();
-		;
 	}
 
 	public void say() {

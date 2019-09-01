@@ -1,58 +1,68 @@
 package cn.com.sky.basics.enums;
 
+import org.apache.commons.lang.StringUtils;
+
 public enum WeekDay {
 
-	Mon("Monday"), Tue("Tuesday"), Wed("Wednesday"), Thu("Thursday"), Fri("Friday"), Sat("Saturday"), Sun("Sunday");
+    Mon("Monday"), Tue("Tuesday"), Wed("Wednesday"), Thu("Thursday"), Fri("Friday"), Sat("Saturday"), Sun("Sunday");
 
-	private final String day;
+    private final String day;
 
-	private WeekDay(String day) {
-		this.day = day;
-	}
+    private WeekDay(String day) {
+        this.day = day;
+    }
 
-	public static void printDay(int i) {
+    public static WeekDay get(String day) {
+        for (WeekDay wk : WeekDay.values()) {
+            System.out.println("wk=" + wk);
+            if (StringUtils.equalsIgnoreCase(wk.getDay(), day)) {
+                return wk;
+            }
+        }
+        return null;
+    }
 
-		switch (i) {
+    public static void printDay(int i) {
 
-		case 1:
-			System.out.println(WeekDay.Mon);
-			break;
+        switch (i) {
 
-		case 2:
-			System.out.println(WeekDay.Tue);
-			break;
+            case 1:
+                System.out.println(WeekDay.Mon);
+                break;
 
-		case 3:
-			System.out.println(WeekDay.Wed);
-			break;
+            case 2:
+                System.out.println(WeekDay.Tue);
+                break;
 
-		case 4:
-			System.out.println(WeekDay.Thu);
-			break;
+            case 3:
+                System.out.println(WeekDay.Wed);
+                break;
 
-		case 5:
-			System.out.println(WeekDay.Fri);
-			break;
+            case 4:
+                System.out.println(WeekDay.Thu);
+                break;
 
-		case 6:
-			System.out.println(WeekDay.Sat);
-			break;
+            case 5:
+                System.out.println(WeekDay.Fri);
+                break;
 
-		case 7:
-			System.out.println(WeekDay.Sun);
-			break;
+            case 6:
+                System.out.println(WeekDay.Sat);
+                break;
 
-		default:
-			System.out.println("wrong number!");
+            case 7:
+                System.out.println(WeekDay.Sun);
+                break;
 
-		}
+            default:
+                System.out.println("wrong number!");
 
-	}
+        }
 
-	public String getDay() {
+    }
 
-		return day;
-
-	}
+    public String getDay() {
+        return day;
+    }
 
 }

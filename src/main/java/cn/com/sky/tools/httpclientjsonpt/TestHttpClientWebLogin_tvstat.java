@@ -23,11 +23,8 @@ import org.apache.http.util.EntityUtils;
 
 /**
  * 模拟登陆tv统计平台并且查询报表
- * 
- * @author zxp
- * 
+ **
  */
-
 public class TestHttpClientWebLogin_tvstat {
 
 	public static void main(String[] args) {

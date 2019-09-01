@@ -1,5 +1,8 @@
 package cn.com.sky.basics.compare;
 
+import org.junit.Test;
+import org.junit.runner.Computer;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -7,56 +10,58 @@ import java.util.Iterator;
 
 /**
  * <pre>
- * 
+ *
  * 在JDK7版本以上，Comparator要满足自反性，传递性，对称性，不然Arrays.sort，Collections.sort会报IllegalArgumentException异常。
- *  说明： 
- *  1） 自反性：x，y的比较结果和y，x的比较结果相反。 
- *  2） 传递性：x>y,y>z,则x>z。 
+ *  说明：
+ *  1） 自反性：x，y的比较结果和y，x的比较结果相反。
+ *  2） 传递性：x>y,y>z,则x>z。
  *  3） 对称性：x=y,则x,z比较结果和y，z比较结果相同。
- *  
+ *
  * </pre>
- * 
  */
 public class TestComparator {
 
-	public static void main(String[] args) {
 
-		Comparator<TstComp> c = new Comparator<TstComp>() {
-			@Override
-			public int compare(TstComp o1, TstComp o2) {
-				return o1.a - o2.a;
-			}
-		};
+    @Test
+    public void test() {
+        ArrayList<Computer> list = new ArrayList<>();
+        Computer t1 = new Computer(1, 2);
+        Computer t2 = new Computer(2, 3);
+        Computer t3 = new Computer(4, 5);
+        list.add(t2);
+        list.add(t1);
+        list.add(t3);
 
-		TstComp t1 = new TstComp(1, 2);
-		TstComp t2 = new TstComp(2, 3);
-		TstComp t3 = new TstComp(4, 5);
-		ArrayList<TstComp> list = new ArrayList<TstComp>();
-		list.add(t2);
-		list.add(t1);
-		list.add(t3);
+        for (Iterator<Computer> iterator = list.iterator(); iterator.hasNext(); ) {
+            Computer computer = iterator.next();
+            System.out.println(computer.a + ":" + computer.b);
+        }
 
-		for (Iterator<TstComp> iterator = list.iterator(); iterator.hasNext();) {
-			TstComp t = iterator.next();
-			System.out.println(t.a + ":" + t.b);
-		}
+        System.out.println("==============Collections.sort==============");
 
-		Collections.sort(list, c);
+        //比较器
+        Comparator<Computer> comparator = new Comparator<Computer>() {
+            @Override
+            public int compare(Computer o1, Computer o2) {
+                return o1.a - o2.a;
+            }
+        };
+        Collections.sort(list, comparator);
 
-		for (Iterator<TstComp> iterator = list.iterator(); iterator.hasNext();) {
-			TstComp t = iterator.next();
-			System.out.println(t.a + ":" + t.b);
-		}
-	}
+        for (Iterator<Computer> iterator = list.iterator(); iterator.hasNext(); ) {
+            Computer computer = iterator.next();
+            System.out.println(computer.a + ":" + computer.b);
+        }
+    }
 
-	static class TstComp {
-		private int a;
-		private int b;
+    class Computer {
+        private int a;
+        private int b;
 
-		public TstComp(int a, int b) {
-			this.a = a;
-			this.b = b;
-		}
-	}
+        public Computer(int a, int b) {
+            this.a = a;
+            this.b = b;
+        }
+    }
 
 }

@@ -1,6 +1,6 @@
 package cn.com.sky.tools.json.gson;
 
-import cn.com.sky.tools.json.fastjson.Men;
+import cn.com.sky.tools.json.fastjson.domain.Men;
 
 import com.google.gson.Gson;
 

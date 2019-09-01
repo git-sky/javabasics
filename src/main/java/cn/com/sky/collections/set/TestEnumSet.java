@@ -5,18 +5,19 @@ import java.util.EnumSet;
 import org.junit.Test;
 
 public class TestEnumSet {
-	enum WeekDay {
-		MONDAY, TUESDAY, WEDSDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
-	};
 
-	@Test
-	public void test() {
+    enum WeekDay {
+        MONDAY, TUESDAY, WEDSDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
+    }
 
-		EnumSet<WeekDay> always = EnumSet.allOf(WeekDay.class);
-		EnumSet<WeekDay> never = EnumSet.noneOf(WeekDay.class);
+    @Test
+    public void test() {
 
-		System.out.println(always.size());
-		System.out.println(never.size());
+        EnumSet<WeekDay> always = EnumSet.allOf(WeekDay.class);
+        EnumSet<WeekDay> never = EnumSet.noneOf(WeekDay.class);
 
-	}
+        System.out.println(always.size());
+        System.out.println(never.size());
+
+    }
 }

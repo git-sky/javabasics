@@ -12,4 +12,10 @@ public enum WeekDayEnum {
 	public int getIndex() {
 		return index;
 	}
+
+
+
+	public static void main(String[] args) {
+
+	}
 }

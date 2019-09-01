@@ -1,7 +1,7 @@
 package cn.com.sky.collections.list;
 
+import cn.com.sky.collections.list.domain.CompRoomResult;
 import com.google.common.collect.Lists;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.util.Collections;
@@ -12,7 +12,7 @@ import java.util.Objects;
 public class TestListSort {
 
     @Test
-    public void tst() {
+    public void test() {
 
         List compRoomResultList = Lists.newArrayList();
 
@@ -40,6 +40,8 @@ public class TestListSort {
 
 
         System.out.println(compRoomResultList);
+
+        System.out.println("------------------------------------------------------------------------");
 
 
         //按照siteId排序，

@@ -23,7 +23,6 @@ import org.apache.http.util.EntityUtils;
 
 /**
  * 模拟登陆sportsgo测试平台并且修改密码
- * @author zxp
  *
  */
 

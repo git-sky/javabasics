@@ -38,7 +38,7 @@ public class Wang implements CallBack {
 			}
 		}).start();
 
-		// 小网问完问题挂掉电话就去干其他的事情了，诳街去了
+		// 小王问完问题挂掉电话就去干其他的事情了，诳街去了
 		play();
 	}
 

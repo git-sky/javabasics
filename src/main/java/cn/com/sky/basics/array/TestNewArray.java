@@ -2,41 +2,48 @@ package cn.com.sky.basics.array;
 
 public class TestNewArray {
 
-	public static void main(String[] args) {
-		People[] people = new People[10];
+    public static void main(String[] args) {
 
-		for (int i = 0; i < 5; i++) {
-			people[i] = new People();
-		}
+        //创建有10个元素的数组，默认值是null。
+        People[] people = new People[10];
 
-		System.out.println(people.length);
+        //length是10。
+        System.out.println(people.length);
 
-		for (People p : people) {
-			System.out.println(p);
-			System.out.println(p.getName());
-		}
 
-	}
+        for (int i = 0; i < 5; i++) {
+            people[i] = new People();
+        }
 
-	static final class People {
 
-		private String name;
+        System.out.println(people.length);
 
-		People() {
-			System.out.println("People()............");
-		}
+        for (People p : people) {
+            System.out.println(p);
+            System.out.println(p.getName());
+        }
 
-		People(String name) {
-			System.out.println("People(String name)........");
-			this.setName(name);
-		}
+    }
 
-		public String getName() {
-			return name;
-		}
+    static final class People {
 
-		public void setName(String name) {
-			this.name = name;
-		}
-	}
+        private String name;
+
+        People() {
+            System.out.println("People()............");
+        }
+
+        People(String name) {
+            System.out.println("People(String name)........");
+            this.setName(name);
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
 }

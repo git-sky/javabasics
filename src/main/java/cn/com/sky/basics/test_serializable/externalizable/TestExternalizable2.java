@@ -40,6 +40,7 @@ public class TestExternalizable2 {
   * Externalizable序列化机制
   * 
   * 实现Externalizable接口的类必须要提供一个无参的构造器，且它的访问权限为public。
+  *
   * 使用Externalizable进行序列化，当读取对象时，会调用被序列化类的无参构造器去创建一个新的对象，然后再将被保存对象的字段的值分别填充到新对象中。
   * 
   * </pre>

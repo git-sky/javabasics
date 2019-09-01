@@ -32,7 +32,7 @@ import com.esotericsoftware.kryo.io.Output;
  */
 public class TestKryo {
 
-	private static final String FILE = "e:/file.bin";
+	private static final String FILE = "file.bin";
 
 	@Test
 	public void test() {
@@ -61,9 +61,9 @@ public class TestKryo {
 		try {
 			output = new Output(new FileOutputStream(FILE));
 			for (int i = 0; i < 10; i++) {
-				Map<String, Integer> map = new HashMap<String, Integer>(2);
-				map.put("zhang0", i);
-				map.put("zhang1", i);
+//				Map<String, Integer> map = new HashMap<String, Integer>(2);
+//				map.put("zhang0", i);
+//				map.put("zhang1", i);
 				kryo.writeObject(output, new Simple("zhang" + i, (i + 1)));
 			}
 			output.flush();

@@ -2,6 +2,7 @@ package cn.com.sky.tools.logback;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 public class Log4j2Demo {
 
     private static Logger log = LoggerFactory.getLogger(LogbackDemo.class);
@@ -14,7 +15,7 @@ public class Log4j2Demo {
         Log4j2Demo.Student s = null;// new Student();
 
         // log.trace("======trace,{}", s.getAge());
-        log.debug("======debug,{}", s.getAge());// 就是高于debug级别,也会抛异常
+//        log.debug("======debug,{}", s.getAge());// 就是高于debug级别,也会抛异常
         if (log.isDebugEnabled()) {// 正常
             log.debug("======debug,{}", s.getAge());
         }

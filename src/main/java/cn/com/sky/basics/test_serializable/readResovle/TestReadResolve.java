@@ -35,6 +35,7 @@ enum Gender {
  * <pre>
  * 
  * 无论是实现Serializable接口，或是Externalizable接口，当从I/O流中读取对象时，readResolve()方法都会被调用到。
+ *
  * 实际上就是用readResolve()中返回的对象直接替换在反序列化过程中创建的对象，而被创建的对象则会被垃圾回收掉。
  * 
  * </pre>

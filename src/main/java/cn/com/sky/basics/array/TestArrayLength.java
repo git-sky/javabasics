@@ -1,7 +1,6 @@
 package cn.com.sky.basics.array;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class TestArrayLength {
 

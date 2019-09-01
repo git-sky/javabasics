@@ -13,9 +13,7 @@ import org.apache.http.util.EntityUtils;
 
 /**
  * 模拟登录csdn账号并设置
- * 
- * @author zxp
- * 
+ **
  */
 
 public class TestHttpClientWebLogin_csdn {

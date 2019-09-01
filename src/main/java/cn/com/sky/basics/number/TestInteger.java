@@ -36,21 +36,31 @@ public class TestInteger {
         System.out.println("num1>num2: " + (num1 > num2));
         System.out.println("num1<num2: " + (num1 < num2));
 
-        // 在-128~127 之内的数
+        System.out.println("===================================");
+
+        // 在-128~127 之内的数，则相等。
         Integer num3 = 97;
         Integer num4 = 97;
         System.out.println("num3==num4: " + (num3 == num4));
         System.out.println("num3>num4: " + (num3 > num4));
         System.out.println("num3<num4: " + (num3 < num4));
 
+        System.out.println("===================================");
+
+        //两个Integer，无论大小，都不相等。
+        Integer num5 = new Integer(97);
+        Integer num6 = new Integer(97);
+        System.out.println("num3==num4: " + (num5 == num6));
+        System.out.println("num3>num4: " + (num5 > num6));
+        System.out.println("num3<num4: " + (num5 < num6));
+
     }
 
     @Test
     public void test3() {
-
-        long a = 59234L;
+        long a = 59999L;
         int b = 10000;
-
+        //取整
         System.out.println(a / b);
 
     }
@@ -68,30 +78,35 @@ public class TestInteger {
         int d = Integer.parseInt(String.valueOf(c));
 
         System.out.println(d);
-
     }
+
 
     @Test
     public void test5() {
         String user_id = "100000000004";
         String friend_id = "100000000005";
         if (Long.valueOf(user_id) < Long.valueOf(friend_id)) {
-            System.out.println("--------------------------\n");
+            System.out.println("--------------------------");
         } else {
-            System.out.println("-===========================\n");
+            System.out.println("-===========================");
         }
     }
 
     @Test
     public void test6() {
-
         Integer num = new Integer(1);
         System.out.println(validStatus(num));
     }
 
     private boolean validStatus(Integer num) {
 //        return num == 1;
+        //返回false，在–128到127之间，也不相等。
         return num == new Integer(1);
     }
 
+    @Test
+    public void tes(){
+        long a=-1;
+        System.out.println(a!=-1);
+    }
 }

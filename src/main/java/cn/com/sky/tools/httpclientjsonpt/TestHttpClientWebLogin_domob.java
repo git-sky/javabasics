@@ -20,67 +20,64 @@ import org.apache.http.util.EntityUtils;
 
 /**
  * 模拟登陆多盟
- * 
- * @author zxp
- * 
+ * *
  */
-
 public class TestHttpClientWebLogin_domob {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		// 创建默认的httpClient实例.
-		HttpClient httpclient = new DefaultHttpClient();
+        // 创建默认的httpClient实例.
+        HttpClient httpclient = new DefaultHttpClient();
 
-		// 设置自动跳转
-		((AbstractHttpClient) httpclient)
-				.setRedirectStrategy(new LaxRedirectStrategy());
+        // 设置自动跳转
+        ((AbstractHttpClient) httpclient)
+                .setRedirectStrategy(new LaxRedirectStrategy());
 
-		login_web(httpclient);// 登录
+        login_web(httpclient);// 登录
 
-		httpclient.getConnectionManager().shutdown();
-	}
+        httpclient.getConnectionManager().shutdown();
+    }
 
-	private static void login_web(HttpClient httpclient) {
+    private static void login_web(HttpClient httpclient) {
 
-		// 创建httppost
-		HttpPost httppost = new HttpPost(
-				"http://www.domob.cn/passport/user/login");
+        // 创建httppost
+        HttpPost httppost = new HttpPost(
+                "http://www.domob.cn/passport/user/login");
 
-		// 创建参数队列
-		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+        // 创建参数队列
+        List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 
-		formparams.add(new BasicNameValuePair("LoginForm[username]",
-				"xxxxx@qq.com"));
-		formparams.add(new BasicNameValuePair("LoginForm[password]",
-				"bbbbb"));
+        formparams.add(new BasicNameValuePair("LoginForm[username]",
+                "xxxxx@qq.com"));
+        formparams.add(new BasicNameValuePair("LoginForm[password]",
+                "bbbbb"));
 
-		UrlEncodedFormEntity uefEntity;
-		try {
-			uefEntity = new UrlEncodedFormEntity(formparams, "UTF-8");
-			httppost.setEntity(uefEntity);
-			System.out.println("executing request: " + httppost.getURI());
-			HttpResponse response = httpclient.execute(httppost);
-			HttpEntity entity = response.getEntity();
+        UrlEncodedFormEntity uefEntity;
+        try {
+            uefEntity = new UrlEncodedFormEntity(formparams, "UTF-8");
+            httppost.setEntity(uefEntity);
+            System.out.println("executing request: " + httppost.getURI());
+            HttpResponse response = httpclient.execute(httppost);
+            HttpEntity entity = response.getEntity();
 
-			response.getStatusLine();
+            response.getStatusLine();
 
-			System.out.println("executing request: "
-					+ response.getStatusLine().getStatusCode());
+            System.out.println("executing request: "
+                    + response.getStatusLine().getStatusCode());
 
-			if (entity != null) {
-				System.out.println("--------------------------------------");
-				System.out.println("Response content: "
-						+ EntityUtils.toString(entity, "UTF-8"));
-				System.out.println("--------------------------------------");
-			}
-		} catch (ClientProtocolException e) {
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e1) {
-			e1.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+            if (entity != null) {
+                System.out.println("--------------------------------------");
+                System.out.println("Response content: "
+                        + EntityUtils.toString(entity, "UTF-8"));
+                System.out.println("--------------------------------------");
+            }
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e1) {
+            e1.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-	}
+    }
 }

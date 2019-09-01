@@ -1,6 +1,5 @@
 package cn.com.sky.tools.serializable.fastjson;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Map;
 

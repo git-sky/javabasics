@@ -32,7 +32,7 @@ public class POIExcelWriteDemo1 {
 
 			// 写入文件
 			FileOutputStream fileOut;
-			fileOut = new FileOutputStream("f:/gaohw.xlsx");
+			fileOut = new FileOutputStream("abc.xlsx");
 			wb.write(fileOut);
 			fileOut.close();
 			System.out.println("写入成功，运行结束！");

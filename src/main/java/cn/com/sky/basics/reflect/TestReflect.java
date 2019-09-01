@@ -50,15 +50,15 @@ public class TestReflect {
 			field.setAccessible(true);
 			field.set(this, "jobs");
 
-			// // getField只能获取public域，所以会报错
-			// Field field2 = this.getClass().getField("addr");
-			// field2.setAccessible(true);
-			// field2.set(this, "china");
-			//
-			// // getField只能获取public域，所以会报错
-			// Field field3 = this.getClass().getField("age");
-			// field3.setAccessible(true);
-			// field3.set(this, "222");
+			 // getField只能获取public域，所以会报错
+//			 Field field2 = this.getClass().getField("addr");
+//			 field2.setAccessible(true);
+//			 field2.set(this, "china");
+//			//
+			 // getField只能获取public域，所以会报错
+			 Field field3 = this.getClass().getField("age");
+			 field3.setAccessible(true);
+			 field3.set(this, "222");
 
 		} catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
 			e.printStackTrace();
@@ -103,7 +103,6 @@ public class TestReflect {
 		try {
 
 			// getDeclaredField 获取全部域
-
 			Field field = this.getClass().getDeclaredField("name");
 			field.setAccessible(true);
 			field.set(this, "jobs");

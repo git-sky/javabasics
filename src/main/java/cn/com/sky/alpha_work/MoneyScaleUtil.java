@@ -4,9 +4,6 @@ import java.math.BigDecimal;
 
 /**
  * 格式化货币
- *
- * @author zhangyinhu
- * @date 2015-3-23 上午11:51:28
  */
 public class MoneyScaleUtil {
 

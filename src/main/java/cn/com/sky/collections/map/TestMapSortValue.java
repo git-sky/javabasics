@@ -14,7 +14,7 @@ public class TestMapSortValue {
 
 	@Test
 	public void test() {
-		Map<String, Long> map = new HashMap<String, Long>();
+		Map<String, Long> map = new HashMap<>();
 		map.put("c", 33333L);
 		map.put("a", 11111L);
 		map.put("d", 44444L);
@@ -22,14 +22,15 @@ public class TestMapSortValue {
 		map.put("b", 22222L);
 
 		// 将map.entrySet()转换成list
-		List<Map.Entry<String, Long>> list = new ArrayList<Map.Entry<String, Long>>(map.entrySet());
+		List<Map.Entry<String, Long>> list = new ArrayList<>(map.entrySet());
 		Collections.sort(list, new Comparator<Map.Entry<String, Long>>() {
 			// 降序排序
 			@Override
 			public int compare(Entry<String, Long> o1, Entry<String, Long> o2) {
 				// return o1.getValue().compareTo(o2.getValue());
 //				return o2.getValue().compareTo(o1.getValue());
-				return (int) (o2.getValue() - o1.getValue());
+//				return (int) (o2.getValue() - o1.getValue());//降序
+				return (int) (o1.getValue() - o2.getValue());//升序
 			}
 		});
 

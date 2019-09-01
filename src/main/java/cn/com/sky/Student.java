@@ -2,7 +2,7 @@ package cn.com.sky;
 
 public class Student {
 
-	private String name;// 字段
+	private String name;
 	private String addr;
 
 	public String getName() {

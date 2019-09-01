@@ -5,26 +5,27 @@ package cn.com.sky.basics.exceptions.exceptions;
  */
 public class NeverCaught {
 
-	static void f() throws ExceptionB {
-		throw new ExceptionB("exception b");
-	}
+    static void f() throws ExceptionB {
+        throw new ExceptionB("exception b");
+    }
 
-	static void g() throws ExceptionC {
-		try {
-			f();
-		} catch (ExceptionB e) {
-			ExceptionC c = new ExceptionC("exception c");
+    static void g() throws ExceptionC {
+        try {
+            f();
+        } catch (ExceptionB e) {
+            ExceptionC c = new ExceptionC("exception c");
 
 //			c.initCause(e);// 异常链,不写这一句，异常链就会丢失。
-			throw c;
-		}
-	}
+            throw c;
+        }
+    }
 
-	public static void main(String[] args) {
-		try {
-			g();
-		} catch (ExceptionC e) {
-			e.printStackTrace();
-		}
-	}
+    public static void main(String[] args) {
+        try {
+            g();
+        } catch (ExceptionC e) {
+            e.printStackTrace();
+        }
+    }
+
 }

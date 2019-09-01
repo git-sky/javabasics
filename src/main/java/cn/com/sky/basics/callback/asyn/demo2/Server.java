@@ -15,7 +15,7 @@ public class Server {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println("服务端:数据处理成功，返回成功状态 200");
+		System.out.println("服务端：数据处理成功，返回成功状态 200");
 		String status = "200";
 		callBack.process(status);
 	}

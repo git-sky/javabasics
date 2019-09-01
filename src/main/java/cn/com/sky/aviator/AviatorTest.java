@@ -9,10 +9,13 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Aviator是一个高性能、轻量级的java语言实现的表达式求值引擎，主要用于各种表达式的动态求值。
+ */
 public class AviatorTest {
 
     @Test
-    public void filterTest(){
+    public void filterTest() {
         //如果想查看每个表达式生成的字节码，可以通过打开 Trace 选项：
         AviatorEvaluator.setOption(Options.TRACE_EVAL, true);
         String goodsRule = "(goodsSource == 2 && averagePrice == originalPrice) || goodsSource == 1";
@@ -41,8 +44,8 @@ public class AviatorTest {
         Boolean zlValidResult = (Boolean) compiledExp.execute(zlValid);
         Boolean yfValidResult = (Boolean) compiledExp.execute(yfValid);
 
-        Assert.assertFalse("过滤活动房失败", zlInvalidResult.booleanValue());
-        Assert.assertTrue("过滤直连正价失败", zlValidResult.booleanValue());
-        Assert.assertTrue("过滤预付失败", yfValidResult.booleanValue());
+        Assert.assertFalse("失败", zlInvalidResult.booleanValue());
+        Assert.assertTrue("失败", zlValidResult.booleanValue());
+        Assert.assertTrue("失败", yfValidResult.booleanValue());
     }
 }

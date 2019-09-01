@@ -13,7 +13,7 @@ import java.util.Date;
 public class TestPoi2 {
     public static void main(String[] args) {
 
-        File tempExcel = new File("/opt/logs/mobile/tdc-poimatch/a.xlsx");
+        File tempExcel = new File("a.xlsx");
 
         Workbook workbook;
         try {
@@ -26,7 +26,7 @@ public class TestPoi2 {
         Sheet sheet = workbook.getSheetAt(0);
 
         int lastRowNum = sheet.getLastRowNum();
-        System.out.println("lastRowNum="+lastRowNum);
+        System.out.println("lastRowNum=" + lastRowNum);
         for (int i = 0; i < lastRowNum; i++) {
             Row row = sheet.getRow(i);
             if (row == null) {
@@ -34,13 +34,11 @@ public class TestPoi2 {
             }
 
 
-
             //品牌id，品牌名称，品牌别名，品牌logo，品牌官网，品牌官方电话，品牌加盟电话，品牌创立时间，品牌标语，品牌介绍，品牌故事
-
             String dateStr = getCellValue(row.getCell(0));
             String date = getCellValue(row.getCell(1));
 
-            System.out.println("date:"+date);
+            System.out.println("date:" + date);
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             try {
                 Date d = sdf.parse(date);

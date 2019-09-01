@@ -135,7 +135,7 @@ public class ChangerService {
 //        // 商家入驻-固定返利
 //        boolean checkinFixed = planPo.getPlanType() == BaseConstants.PLAN_TYPE_SELLER_INVITATION && planPo.getFlow() == BaseConstants.PLAN_FLOW_SELLER_INVITATION_FIXED;
 //        // 平台基础和促销，邀请好友-固定返利
-//        boolean frindFixed = BusinessUtil.checkIsPlatform(planPo) && planPo.getFlow() == BaseConstants.PLAN_FLOW_INVITED_FRIEND_FIXED;
+
 //        boolean needSend = true;
 //        if (checkinFixed || frindFixed) {
 //            needSend = false;

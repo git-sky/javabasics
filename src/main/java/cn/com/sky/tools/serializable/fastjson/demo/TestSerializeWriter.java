@@ -15,7 +15,7 @@ public class TestSerializeWriter {
 		map.put("age", 12);
 		map.put("isBoy", true);
 
-		ResponseModel<Object> responseModel = new ResponseModel<Object>(map);
+		ResponseModel<Object> responseModel = new ResponseModel<>(map);
 		responseModel.setIsGoods(true);
 
 		SerializeWriter out = new SerializeWriter();

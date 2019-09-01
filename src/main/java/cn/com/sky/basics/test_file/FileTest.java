@@ -1,108 +1,103 @@
 package cn.com.sky.basics.test_file;
 
 import java.io.File;
-
 import java.io.FileOutputStream;
-
 import java.io.*;
 
 public class FileTest {
 
-	public FileTest() {
+    public FileTest() {
+    }
 
-	}
+    public static void main(String[] args) {
 
-	public static void main(String[] args) {
+        FileOutputStream out = null;
 
-		FileOutputStream out = null;
+        FileOutputStream outSTr = null;
 
-		FileOutputStream outSTr = null;
+        BufferedOutputStream Buff = null;
 
-		BufferedOutputStream Buff = null;
+        FileWriter fw = null;
 
-		FileWriter fw = null;
+        int count = 1000;// 写文件行数
 
-		int count = 1000;// 写文件行数
+        try {
 
-		try {
+            out = new FileOutputStream(new File("add.txt"));
 
-			out = new FileOutputStream(new File("C:/add.txt"));
+            long begin = System.currentTimeMillis();
 
-			long begin = System.currentTimeMillis();
+            for (int i = 0; i < count; i++) {
 
-			for (int i = 0; i < count; i++) {
+                out.write("测试java 文件操作\r\n".getBytes());
 
-				out.write("测试java 文件操作\r\n".getBytes());
+            }
 
-			}
+            out.close();
 
-			out.close();
+            long end = System.currentTimeMillis();
 
-			long end = System.currentTimeMillis();
+            System.out.println("FileOutputStream执行耗时:" + (end - begin) + " 豪秒");
 
-			System.out.println("FileOutputStream执行耗时:" + (end - begin) + " 豪秒");
+            outSTr = new FileOutputStream(new File("add0.txt"));
 
-			outSTr = new FileOutputStream(new File("C:/add0.txt"));
+            Buff = new BufferedOutputStream(outSTr);
 
-			Buff = new BufferedOutputStream(outSTr);
+            long begin0 = System.currentTimeMillis();
 
-			long begin0 = System.currentTimeMillis();
+            for (int i = 0; i < count; i++) {
 
-			for (int i = 0; i < count; i++) {
+                Buff.write("测试java 文件操作\r\n".getBytes());
 
-				Buff.write("测试java 文件操作\r\n".getBytes());
+            }
 
-			}
+            Buff.flush();
 
-			Buff.flush();
+            Buff.close();
 
-			Buff.close();
+            long end0 = System.currentTimeMillis();
 
-			long end0 = System.currentTimeMillis();
+            System.out.println("BufferedOutputStream执行耗时:" + (end0 - begin0) + " 豪秒");
 
-			System.out.println("BufferedOutputStream执行耗时:" + (end0 - begin0) + " 豪秒");
+            fw = new FileWriter("add2.txt");
 
-			fw = new FileWriter("C:/add2.txt");
+            long begin3 = System.currentTimeMillis();
 
-			long begin3 = System.currentTimeMillis();
+            for (int i = 0; i < count; i++) {
 
-			for (int i = 0; i < count; i++) {
+                fw.write("测试java 文件操作\r\n");
 
-				fw.write("测试java 文件操作\r\n");
+            }
 
-			}
+            fw.close();
 
-			fw.close();
+            long end3 = System.currentTimeMillis();
 
-			long end3 = System.currentTimeMillis();
+            System.out.println("FileWriter执行耗时:" + (end3 - begin3) + " 豪秒");
 
-			System.out.println("FileWriter执行耗时:" + (end3 - begin3) + " 豪秒");
+        } catch (Exception e) {
 
-		} catch (Exception e) {
+            e.printStackTrace();
 
-			e.printStackTrace();
+        } finally {
 
-		}
+            try {
 
-		finally {
+                fw.close();
 
-			try {
+                Buff.close();
 
-				fw.close();
+                outSTr.close();
 
-				Buff.close();
+                out.close();
 
-				outSTr.close();
+            } catch (Exception e) {
 
-				out.close();
+                e.printStackTrace();
 
-			} catch (Exception e) {
+            }
 
-				e.printStackTrace();
+        }
 
-			}
-
-		}
-
-	}
+    }
 }

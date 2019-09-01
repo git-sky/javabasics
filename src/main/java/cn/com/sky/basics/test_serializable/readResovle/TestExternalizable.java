@@ -12,43 +12,52 @@ import java.io.ObjectOutputStream;
 
 public class TestExternalizable implements Externalizable {
 
-	private transient String content = "是的，我将会被序列化，不管我是否被transient关键字修饰";
+    private transient String content = "是的，我将会被序列化，不管我是否被transient关键字修饰";
 
-	public String getContent() {
-		return content;
-	}
+    public String getContent() {
+        return content;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public void setContent(String content) {
+        this.content = content;
+    }
 
-	public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
-		TestExternalizable et = new TestExternalizable();
-		ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(new File("test")));
-		out.writeObject(et);
+        TestExternalizable et = new TestExternalizable();
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(new File("test")));
+        out.writeObject(et);
 
-		ObjectInput in = new ObjectInputStream(new FileInputStream(new File("test")));
-		et = (TestExternalizable) in.readObject();
-		System.out.println(et.content);
+        ObjectInput in = new ObjectInputStream(new FileInputStream(new File("test")));
+        et = (TestExternalizable) in.readObject();
+        System.out.println(et.content);
 
-		out.close();
-		in.close();
-	}
+        out.close();
+        in.close();
+    }
 
-	@Override
-	public void writeExternal(ObjectOutput out) throws IOException {
-		out.writeObject(content);
-	}
+    @Override
+    public void writeExternal(ObjectOutput out) throws IOException {
+        out.writeObject(content);
+    }
 
-	@Override
-	public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-		content = (String) in.readObject();
-	}
+    @Override
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+        content = (String) in.readObject();
+    }
 
-	private Object readResolve() {
-		TestExternalizable t = new TestExternalizable();
-		t.setContent("readSolve");
-		return t;
-	}
+    /**
+     * <pre>
+     *
+     * 无论是实现Serializable接口，或是Externalizable接口，当从I/O流中读取对象时，readResolve()方法都会被调用到。
+     *
+     * 实际上就是用readResolve()中返回的对象直接替换在反序列化过程中创建的对象，而被创建的对象则会被垃圾回收掉。
+     *
+     * </pre>
+     */
+    private Object readResolve() {
+        TestExternalizable t = new TestExternalizable();
+        t.setContent("readSolve");
+        return t;
+    }
 }

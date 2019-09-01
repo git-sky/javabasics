@@ -32,7 +32,7 @@ public class DESUtil {
 	 * 
 	 * 生成密钥key对象
 	 * 
-	 * @param KeyStr
+	 * @param keyStr
 	 *            密钥字符串
 	 * @return 密钥对象
 	 * @throws InvalidKeyException

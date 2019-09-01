@@ -11,7 +11,6 @@ public class TestExceptions {
 
 
     public static void main(String[] args) {
-
         process();
         System.out.println("++++++++++++++++");
     }
@@ -35,7 +34,7 @@ public class TestExceptions {
 //            LOGGER.error("aaaaaa" + e);
             System.out.println("==================");
 //            throw e;
-//            throw new MyBusinessException("A message that describes the error.", e);
+            throw new MyBusinessException("A message that describes the error.", e);
 
         }
     }

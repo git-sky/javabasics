@@ -9,7 +9,7 @@ public class SHAUtil {
 	/***
 	 * SHA加密 生成40位SHA码
 	 * 
-	 * @param 待加密字符串
+	 * @param inStr 待加密字符串
 	 * @return 返回40位SHA码
 	 */
 	public static String shaEncode(String inStr) throws Exception {

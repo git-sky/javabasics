@@ -28,28 +28,28 @@ public class TestSetEffect {
 	@Test
 	public void addHashSet() {
 		System.out.println("HashSet:");
-		HashSet<String> hashSet = new HashSet<String>();
+		HashSet<String> hashSet = new HashSet<>();
 		put(hashSet);
 	}
 
 	@Test
 	public void addLinkedHashSet() {
 		System.out.println("LinkedHashSet:");
-		LinkedHashSet<String> linkedHashSet = new LinkedHashSet<String>();
+		LinkedHashSet<String> linkedHashSet = new LinkedHashSet<>();
 		put(linkedHashSet);
 	}
 
 	@Test
 	public void addTreeSet() {
 		System.out.println("TreeSet:");
-		TreeSet<String> treeSet = new TreeSet<String>();
+		TreeSet<String> treeSet = new TreeSet<>();
 		put(treeSet);
 	}
 
 	private void put(Set set) {
 		StopWatch sw = new StopWatch();
 		sw.start();
-		for (int i = 0; i < 30 * 100000; i++) {
+		for (int i = 0; i < 30 * 1000000; i++) {
 			set.add(i);
 		}
 		sw.stop();

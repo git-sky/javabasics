@@ -14,7 +14,6 @@ public class TestInstance implements Serializable {
 
 	static {
 		try {
-
 			Field f = Unsafe.class.getDeclaredField("theUnsafe");
 			f.setAccessible(true);
 			unsafe = (Unsafe) f.get(null);

@@ -7,38 +7,43 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+/**
+ * 反序列化后类中static型变量的值为当前JVM中对应static变量的值，这个值是JVM中的，不是反序列化得出的。
+ */
 public class TestSerializable3 {
-	public static void main(String[] args) throws IOException, ClassNotFoundException {
-		Foo foo = new Foo();
-		System.out.printf("w: %d%n", Foo.w);
-		System.out.printf("x: %d%n", Foo.x);
-		System.out.printf("y: %d%n", foo.y);
-		System.out.printf("z: %d%n", foo.z);
 
-		FileOutputStream fos = new FileOutputStream("x.txt");
-		ObjectOutputStream oos = new ObjectOutputStream(fos);
-		oos.writeObject(foo);
-		oos.close();
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        Foo foo = new Foo();
+        System.out.printf("w: %d%n", Foo.w);
+        System.out.printf("x: %d%n", Foo.x);
+        System.out.printf("y: %d%n", foo.y);
+        System.out.printf("z: %d%n", foo.z);
 
-		foo = null;
+        FileOutputStream fos = new FileOutputStream("x.txt");
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(foo);
+        oos.close();
 
-		FileInputStream fis = new FileInputStream("x.txt");
-		ObjectInputStream ois = new ObjectInputStream(fis);
-		System.out.println();
-		foo = (Foo) ois.readObject();
-		ois.close();
-		System.out.printf("w: %d%n", Foo.w);
-		System.out.printf("x: %d%n", Foo.x);
-		System.out.printf("y: %d%n", foo.y);
-		System.out.printf("z: %d%n", foo.z);
-	}
+        foo = null;
+
+        FileInputStream fis = new FileInputStream("x.txt");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        System.out.println();
+        foo = (Foo) ois.readObject();
+        ois.close();
+        System.out.printf("w: %d%n", Foo.w);
+        System.out.printf("x: %d%n", Foo.x);
+        System.out.printf("y: %d%n", foo.y);
+        System.out.printf("z: %d%n", foo.z);
+    }
 }
 
 class Foo implements Serializable {
-	private static final long serialVersionUID = 1L;
-	
-	public static int w = 1;
-	public static transient int x = 2;
-	public int y = 3;
-	public transient int z = 4;
+
+    private static final long serialVersionUID = 1L;
+
+    public static int w = 1;
+    public static transient int x = 2;
+    public int y = 3;
+    public transient int z = 4;
 }

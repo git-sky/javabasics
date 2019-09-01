@@ -18,7 +18,7 @@ public class TestSystem {
 	}
 
 	public void index() throws Exception {
-		Map<String, String> properties = new TreeMap<String, String>();
+		Map<String, String> properties = new TreeMap<>();
 		properties.put("Java", System.getProperty("java.runtime.name") + " " + System.getProperty("java.runtime.version"));
 		properties.put("OS", System.getProperty("os.name") + " " + System.getProperty("os.version"));
 		properties.put("CPU", System.getProperty("os.arch", "") + ", " + String.valueOf(Runtime.getRuntime().availableProcessors()) + " cores");

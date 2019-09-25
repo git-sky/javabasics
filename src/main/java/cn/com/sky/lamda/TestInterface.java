@@ -1,6 +1,6 @@
 package cn.com.sky.lamda;
 
-public class Testa {
+public class TestInterface {
 
     public interface OnClickListener {
         void doOnClick();
@@ -25,13 +25,11 @@ public class Testa {
             System.out.println("插上电源");
             System.out.println("打开电视");
         };
-
         mListener_.doOnClick();
 
 
         OnItemClickListener mItemListener = position -> System.out.println("position = [" + position + "]");
         mItemListener.doItemClickListener(1);
-
 
 
         IMathListener mPlusListener = (x, y) -> x + y;
@@ -46,14 +44,9 @@ public class Testa {
                 return y;
             }
         };
-
         System.out.println(mMaxListener.doMathOperator(3,2));
 
 
-
     }
-
-
-
 
 }

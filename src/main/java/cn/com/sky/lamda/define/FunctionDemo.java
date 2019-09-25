@@ -1,10 +1,13 @@
-package cn.com.sky.lamda;
+package cn.com.sky.lamda.define;
 
+/**
+ * FunctionalInterface的使用
+ */
 public class FunctionDemo {
 
     @FunctionalInterface
     public interface FunctionQuote {
-        public void print(String arg);
+        void print(String arg);
     }
 
     public static void process(FunctionQuote functionQuote) {

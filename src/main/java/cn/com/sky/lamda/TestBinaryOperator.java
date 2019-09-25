@@ -3,21 +3,13 @@ package cn.com.sky.lamda;
 import org.junit.Test;
 
 import java.util.function.BinaryOperator;
-import java.util.function.Predicate;
 
-public class TestP {
+public class TestBinaryOperator {
 
     @Test
-    public void test(){
-
-
-        Predicate<Integer> atLeast5 = x -> x > 5;
-
-        System.out.println(atLeast5.test(9));
-
+    public void test() {
         BinaryOperator<Long> addLongs = (x, y) -> x + y;
 
         System.out.println(addLongs);
     }
-
 }

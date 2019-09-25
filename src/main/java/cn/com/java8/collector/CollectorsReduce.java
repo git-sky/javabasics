@@ -7,6 +7,7 @@ import static java.util.stream.Collectors.toList;
 
 
 public class CollectorsReduce {
+
     public static void main(String[] args) {
         List<Dish> menu = Arrays.asList(
                 new Dish("pork", false, 800, Dish.Type.MEAT),

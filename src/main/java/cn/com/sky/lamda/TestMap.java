@@ -1,35 +1,58 @@
 package cn.com.sky.lamda;
 
-
-import cn.com.sky.tools.json.jackson.JsonUtils;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import org.apache.commons.collections.MapUtils;
 import org.junit.Test;
 
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
+
+/**
+ * map方法，类型转换
+ */
 public class TestMap {
 
     @Test
-    public void test() {
+    public void test_NullPointerException() {
+        List<Long> ticketIds = null;
+        System.out.println(ticketIds);
 
-        Map<String, List<RealRoomMatchResult>> allRelationMap = Maps.newHashMap();
+        //guava方式，java.lang.NullPointerException
+        List<Integer> ticketIdsInteger = Lists.transform(ticketIds, Long::intValue);
+        System.out.println(ticketIdsInteger);
 
-        for (int i = 0; i < 10; i++) {
-            allRelationMap.put("a" + i, Lists.newArrayList(new RealRoomMatchResult(i), new RealRoomMatchResult(i + 1), new RealRoomMatchResult(i + 2)));
-        }
-
-        System.out.println(JsonUtils.object2Json(allRelationMap));
-
-
-        List<Integer> realRoomIds = Lists.newArrayList();
-        if (MapUtils.isNotEmpty(allRelationMap)) {
-            allRelationMap.forEach((key, value) -> value.forEach(s -> realRoomIds.add(s.getRealRoomId())));
-        }
-
-        System.out.println(JsonUtils.object2Json(realRoomIds));
-
+        //jdk8方式，java.lang.NullPointerException
+        List<Integer> ticketIdsInteger2 = ticketIds.stream().map(Long::intValue).collect(Collectors.toList());
+        System.out.println(ticketIdsInteger2);
     }
+
+
+    @Test
+    public void test_map() {
+        List<Long> ticketIds = Lists.newArrayList(3L, 1L, 5L, 2L, 9L);
+        System.out.println(ticketIds);
+
+        //guava方式，Long转为Integer类型
+        List<Integer> ticketIdsInteger = Lists.transform(ticketIds, Long::intValue);
+        System.out.println(ticketIdsInteger);
+
+        //jdk8方式，Long转为Integer类型
+        List<Integer> ticketIdsInteger2 = ticketIds.stream().map(Long::intValue).collect(Collectors.toList());
+        System.out.println(ticketIdsInteger2);
+    }
+
+
+    @Test
+    public void test_map_collect() {
+        List<Integer> ids = Lists.newArrayList(1, 2, 3, 4, 5, 6, 6, 6);
+        System.out.println(ids);
+
+        List<Long> idsLong = ids.stream().map(Long::valueOf).collect(Collectors.toList());
+        System.out.println(idsLong);
+
+        Set<Long> idsSet = ids.stream().map(Long::valueOf).collect(Collectors.toSet());
+        System.out.println(idsSet);
+    }
+
 }

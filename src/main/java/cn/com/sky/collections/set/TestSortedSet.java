@@ -6,8 +6,8 @@ import org.junit.Test;
 
 public class TestSortedSet {
 
-	@Test
-	public void test() {
-		SortedSet ss;
-	}
+    @Test
+    public void test() {
+        SortedSet ss;
+    }
 }

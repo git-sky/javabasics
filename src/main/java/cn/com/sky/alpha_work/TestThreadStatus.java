@@ -48,11 +48,9 @@ public class TestThreadStatus {
         System.out.println(Integer.toBinaryString(Integer.MAX_VALUE));
         System.out.println(Integer.toBinaryString(Integer.MIN_VALUE));
         System.out.println(Integer.toBinaryString(-1));
-        System.out.println(Integer.toBinaryString(Integer.MAX_VALUE+1));
-        System.out.println(Integer.toBinaryString(Integer.MAX_VALUE+2));
-        System.out.println(Integer.MAX_VALUE+2);
-
-
+        System.out.println(Integer.toBinaryString(Integer.MAX_VALUE + 1));
+        System.out.println(Integer.toBinaryString(Integer.MAX_VALUE + 2));
+        System.out.println(Integer.MAX_VALUE + 2);
 
 
     }

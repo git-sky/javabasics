@@ -101,4 +101,5 @@ public class IDEAKeyGen {
         System.out.println(MakeKey(username, 0, r.nextInt(100000)));
         scanner.close();
     }
+
 }

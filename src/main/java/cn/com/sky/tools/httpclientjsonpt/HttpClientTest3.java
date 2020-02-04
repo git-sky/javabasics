@@ -16,21 +16,21 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 /**
  * 利用HttpClient，模拟https连接 使用4.1版本
- * 
+ *
  * @since 2011.7.7
  */
 public class HttpClientTest3 {
 
-	/**
-	 * 运行主方法
-	 * 
-	 * @param args
-	 * @throws Exception
-	 */
-	public static void main(String[] args) throws Exception {
-		// 获得httpclient对象
-		HttpClient httpclient = new DefaultHttpClient();
-		// 获得密匙库
+    /**
+     * 运行主方法
+     *
+     * @param args
+     * @throws Exception
+     */
+    public static void main(String[] args) throws Exception {
+        // 获得httpclient对象
+        HttpClient httpclient = new DefaultHttpClient();
+        // 获得密匙库
 //		KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
 //		FileInputStream instream = new FileInputStream(new File("e:/temp"));
 //		// 密匙库的密码
@@ -42,17 +42,17 @@ public class HttpClientTest3 {
 //				.setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
 //		Scheme sch = new Scheme("https", 800, socketFactory);
 //		httpclient.getConnectionManager().getSchemeRegistry().register(sch);
-		// 获得HttpGet对象
-		HttpGet httpGet = null;
-		httpGet = new HttpGet("https://user.qzone.qq.com/123456/2");
-		// 发送请求
-		HttpResponse response = httpclient.execute(httpGet);
-		// 输出返回值
-		InputStream is = response.getEntity().getContent();
-		BufferedReader br = new BufferedReader(new InputStreamReader(is));
-		String line = "";
-		while ((line = br.readLine()) != null) {
-			System.out.println(line);
-		}
-	}
+        // 获得HttpGet对象
+        HttpGet httpGet = null;
+        httpGet = new HttpGet("https://user.qzone.qq.com/123456/2");
+        // 发送请求
+        HttpResponse response = httpclient.execute(httpGet);
+        // 输出返回值
+        InputStream is = response.getEntity().getContent();
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        String line = "";
+        while ((line = br.readLine()) != null) {
+            System.out.println(line);
+        }
+    }
 }

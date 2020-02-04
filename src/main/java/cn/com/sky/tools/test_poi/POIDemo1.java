@@ -15,29 +15,29 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class POIDemo1 {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		try {
-			String fin = "f:/a.xlsx";
-			String fout = "f:/b.xlsx";
-			InputStream fis = new FileInputStream(new File(fin));
-			OutputStream fos = new FileOutputStream(new File(fout));
-			XSSFWorkbook wb = new XSSFWorkbook(fis);
-			XSSFSheet sheet = wb.getSheetAt(0);
-			Row r = sheet.createRow(1);
-			Cell c = r.createCell(0);
-			c.setCellValue("aaaaaa");
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        try {
+            String fin = "f:/a.xlsx";
+            String fout = "f:/b.xlsx";
+            InputStream fis = new FileInputStream(new File(fin));
+            OutputStream fos = new FileOutputStream(new File(fout));
+            XSSFWorkbook wb = new XSSFWorkbook(fis);
+            XSSFSheet sheet = wb.getSheetAt(0);
+            Row r = sheet.createRow(1);
+            Cell c = r.createCell(0);
+            c.setCellValue("aaaaaa");
 
-			wb.write(fos);
-			fos.close();
-			fis.close();
+            wb.write(fos);
+            fos.close();
+            fis.close();
 
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

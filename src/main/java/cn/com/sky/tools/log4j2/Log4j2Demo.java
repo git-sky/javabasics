@@ -1,5 +1,6 @@
-package cn.com.sky.tools.logback;
+package cn.com.sky.tools.log4j2;
 
+import cn.com.sky.tools.logback.LogbackDemo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

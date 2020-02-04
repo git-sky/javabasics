@@ -15,6 +15,9 @@ import cn.com.sky.rpc.simple_rpc_complex.support.Server;
 
 public final class ServerManagerImpl implements ServerManager {
 
+    /**
+     * 存储服务的map
+     */
     private Map<Class<?>, Class<?>> serviceEngine = new HashMap<>();
 
     @Override

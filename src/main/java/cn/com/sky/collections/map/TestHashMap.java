@@ -58,8 +58,8 @@ public class TestHashMap {
         n |= n >>> 16;
         int result = (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
 
-        Assert.assertEquals(cap,1);
-        Assert.assertTrue(cap==1);
+        Assert.assertEquals(cap, 1);
+        Assert.assertTrue(cap == 1);
 
         System.out.println(result);
 

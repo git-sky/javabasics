@@ -7,22 +7,22 @@ import java.util.Enumeration;
  */
 public class TestEnumaration {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		Enumeration<Object> e = new Enumeration<Object>() {
+        Enumeration<Object> e = new Enumeration<Object>() {
 
-			@Override
-			public boolean hasMoreElements() {
-				return false;
-			}
+            @Override
+            public boolean hasMoreElements() {
+                return false;
+            }
 
-			@Override
-			public Object nextElement() {
-				return null;
-			}
-		};
+            @Override
+            public Object nextElement() {
+                return null;
+            }
+        };
 
-		e.hasMoreElements();
+        e.hasMoreElements();
 
-	}
+    }
 }

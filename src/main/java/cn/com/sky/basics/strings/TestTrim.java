@@ -41,10 +41,10 @@ public class TestTrim {
         System.out.println(a);
         System.out.println(StringUtils.trimToEmpty(a));
 
-        System.out.println(StringUtils.equals(StringUtils.trimToEmpty(a),StringUtils.trimToEmpty(b)));
+        System.out.println(StringUtils.equals(StringUtils.trimToEmpty(a), StringUtils.trimToEmpty(b)));
 
 
-        System.out.println(StringUtils.equalsIgnoreCase(StringUtils.trimToEmpty(a),StringUtils.trimToEmpty(b)));
+        System.out.println(StringUtils.equalsIgnoreCase(StringUtils.trimToEmpty(a), StringUtils.trimToEmpty(b)));
     }
 
 }

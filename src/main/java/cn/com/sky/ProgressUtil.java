@@ -7,14 +7,14 @@ import java.lang.management.ManagementFactory;
  */
 public class ProgressUtil {
 
-	public static String getCurrentPID() {
-		String name = ManagementFactory.getRuntimeMXBean().getName();
-		String pid = name.split("@")[0];
-		return pid;
-	}
+    public static String getCurrentPID() {
+        String name = ManagementFactory.getRuntimeMXBean().getName();
+        String pid = name.split("@")[0];
+        return pid;
+    }
 
-	public static void main(String[] args) throws InterruptedException {
-		System.out.println(getCurrentPID());
-		Thread.sleep(100000);
-	}
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println(getCurrentPID());
+        Thread.sleep(100000);
+    }
 }

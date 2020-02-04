@@ -44,47 +44,47 @@ import org.apache.http.util.EntityUtils;
  */
 public class ClientCustomSSL {
 
-	public final static void main(String[] args) throws Exception {
-		DefaultHttpClient httpclient = new DefaultHttpClient();
-		try {
-			KeyStore trustStore = KeyStore.getInstance(KeyStore
-					.getDefaultType());
-			FileInputStream instream = new FileInputStream(new File(
-					"f:/key.p7b"));
-			try {
-				trustStore.load(instream, "".toCharArray());
-			} finally {
-				try {
-					instream.close();
-				} catch (Exception ignore) {
-				}
-			}
+    public final static void main(String[] args) throws Exception {
+        DefaultHttpClient httpclient = new DefaultHttpClient();
+        try {
+            KeyStore trustStore = KeyStore.getInstance(KeyStore
+                    .getDefaultType());
+            FileInputStream instream = new FileInputStream(new File(
+                    "f:/key.p7b"));
+            try {
+                trustStore.load(instream, "".toCharArray());
+            } finally {
+                try {
+                    instream.close();
+                } catch (Exception ignore) {
+                }
+            }
 
-			SSLSocketFactory socketFactory = new SSLSocketFactory(trustStore);
-			Scheme sch = new Scheme("https", 443, socketFactory);
-			httpclient.getConnectionManager().getSchemeRegistry().register(sch);
+            SSLSocketFactory socketFactory = new SSLSocketFactory(trustStore);
+            Scheme sch = new Scheme("https", 443, socketFactory);
+            httpclient.getConnectionManager().getSchemeRegistry().register(sch);
 
-			HttpGet httpget = new HttpGet("https://passport.csdn.net/ajax/accounthandler.ashx?t=log&u=jonliner&p=xpp345,,,&remember=0&f=http%3A%2F%2Fwww.csdn.net%2F&rand=0.09795457124710083");
+            HttpGet httpget = new HttpGet("https://passport.csdn.net/ajax/accounthandler.ashx?t=log&u=jonliner&p=xpp345,,,&remember=0&f=http%3A%2F%2Fwww.csdn.net%2F&rand=0.09795457124710083");
 
-			System.out.println("executing request" + httpget.getRequestLine());
+            System.out.println("executing request" + httpget.getRequestLine());
 
-			HttpResponse response = httpclient.execute(httpget);
-			HttpEntity entity = response.getEntity();
+            HttpResponse response = httpclient.execute(httpget);
+            HttpEntity entity = response.getEntity();
 
-			System.out.println("----------------------------------------");
-			System.out.println(response.getStatusLine());
-			if (entity != null) {
-				System.out.println("Response content length: "
-						+ entity.getContentLength());
-			}
-			EntityUtils.consume(entity);
+            System.out.println("----------------------------------------");
+            System.out.println(response.getStatusLine());
+            if (entity != null) {
+                System.out.println("Response content length: "
+                        + entity.getContentLength());
+            }
+            EntityUtils.consume(entity);
 
-		} finally {
-			// When HttpClient instance is no longer needed,
-			// shut down the connection manager to ensure
-			// immediate deallocation of all system resources
-			httpclient.getConnectionManager().shutdown();
-		}
-	}
+        } finally {
+            // When HttpClient instance is no longer needed,
+            // shut down the connection manager to ensure
+            // immediate deallocation of all system resources
+            httpclient.getConnectionManager().shutdown();
+        }
+    }
 
 }

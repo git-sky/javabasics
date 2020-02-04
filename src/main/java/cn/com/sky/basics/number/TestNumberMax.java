@@ -2,77 +2,75 @@ package cn.com.sky.basics.number;
 
 /**
  * 自增超过最大值，都会出现死循环的情况。
- * 
+ * <p>
  * byte的10000000为-128
- * 
+ * <p>
  * 原因如下：
- * 
+ * <p>
  * 计算机中的符号数有三种表示方法，即原码、反码和补码。三种表示方法均有符号位和数值位两部分，符号位都是用0表示“正”，用1表示“负”，而数值位，
  * 三种表示方法各不相同。
  * 在计算机系统中，数值一律用补码来表示和存储。原因在于，使用补码，可以将符号位和数值域统一处理；同时，加法和减法也可以统一处理。此外，
  * 补码与原码相互转换，其运算过程是相同的，不需要额外的硬件电路。
- * 
+ * <p>
  * 正数：原码反码补码相同。
- * 
+ * <p>
  * 负数：负数的反码是在其原码的基础上, 符号位不变，其余各个位取反。负数的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后+1.
  * (即在反码的基础上+1)。
- * 
+ * <p>
  * [+1] = [00000001]原 = [00000001]反 = [00000001]补
- * 
+ * <p>
  * [-1] = [10000001]原 = [11111110]反 = [11111111]补
- * 
- * 
- * 
+ * <p>
+ * <p>
+ * <p>
  * (-1) + (-127) = [1000 0001]原 + [1111 1111]原 = [1111 1111]补 + [1000 0001]补 =
  * [1000 0000]补
- * 
+ * <p>
  * -1-127的结果应该是-128, 在用补码运算的结果中, [1000 0000]补 就是-128.
  * 但是注意因为实际上是使用以前的-0的补码来表示-128, 所以-128并没有原码和反码表示.(对-128的补码表示[1000
  * 0000]补算出来的原码是[0000 0000]原, 这是不正确的)
- * 
+ * <p>
  * 使用补码, 不仅仅修复了0的符号以及存在两个编码的问题, 而且还能够多表示一个最低数. 这就是为什么8位二进制, 使用原码或反码表示的范围为[-127,
  * +127], 而使用补码表示的范围为[-128, 127].
- * 
+ * <p>
  * 因为机器使用补码, 所以对于编程中常用到的32位int类型, 可以表示范围是: [-231, 231-1]
  * 因为第一位表示的是符号位.而使用补码表示时又可以多保存一个最小值.
- * 
- * 
  */
 public class TestNumberMax {
 
-	public static void main(String args[]) {
+    public static void main(String args[]) {
 
-		// System.out.println(Byte.MAX_VALUE);
-		// System.out.println(Byte.MIN_VALUE);
+        // System.out.println(Byte.MAX_VALUE);
+        // System.out.println(Byte.MIN_VALUE);
 
-		// 这里正常输出0到126
-		for (byte i = 0; i < 127; i++) {
-			System.out.println(i);
-		}
+        // 这里正常输出0到126
+        for (byte i = 0; i < 127; i++) {
+            System.out.println(i);
+        }
 
-		// 因为i的类型是byte，注定他不会超过127，当i=127时，i++为-128，你把127换成二进制算一下，这涉及到补码反码
-		// 死循环
-		// for (byte i = 0; i < 128; i++) {
-		// System.out.println(i);
-		// }
+        // 因为i的类型是byte，注定他不会超过127，当i=127时，i++为-128，你把127换成二进制算一下，这涉及到补码反码
+        // 死循环
+        // for (byte i = 0; i < 128; i++) {
+        // System.out.println(i);
+        // }
 
-		// 死循环
-		// for (byte i = 1; i <= Byte.MAX_VALUE; i++) {
-		// System.out.println("i=" + i);
-		// }
+        // 死循环
+        // for (byte i = 1; i <= Byte.MAX_VALUE; i++) {
+        // System.out.println("i=" + i);
+        // }
 
-		// 死循环
-		// for (short i = 0; i <= Short.MAX_VALUE; i++) {
-		// System.out.println(i);
-		// }
+        // 死循环
+        // for (short i = 0; i <= Short.MAX_VALUE; i++) {
+        // System.out.println(i);
+        // }
 
-		// 死循环
-		// for (int i = 0; i <= Integer.MAX_VALUE; i++) {
-		// if (i >= Integer.MAX_VALUE - 3 || i <= 0) {
-		// System.out.println(i);
-		// }
-		// }
+        // 死循环
+        // for (int i = 0; i <= Integer.MAX_VALUE; i++) {
+        // if (i >= Integer.MAX_VALUE - 3 || i <= 0) {
+        // System.out.println(i);
+        // }
+        // }
 
-	}
+    }
 
 }

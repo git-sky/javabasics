@@ -448,8 +448,9 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.4</version>
+            <version>3.9</version>
         </dependency>
+
 
 
         <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
@@ -635,6 +636,15 @@
             <version>4.0.1</version>
         </dependency>
         <!--kryo序列化工具 结束-->
+
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>provided</scope>
+        </dependency>
 
     </dependencies>
 

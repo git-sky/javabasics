@@ -47,7 +47,7 @@ public class SpliteratorInAction {
         Optional.ofNullable(mySpliteratorText.parallelStream().count())
                 .ifPresent(System.out::println);
 
-       // mySpliteratorText.stream().forEach(System.out::println);
+        // mySpliteratorText.stream().forEach(System.out::println);
 
         mySpliteratorText.parallelStream().filter(s -> !s.equals("")).forEach(System.out::println);
 
@@ -67,7 +67,7 @@ public class SpliteratorInAction {
      * T
      * s getString("")
      * t.set()
-     *
+     * <p>
      * Object
      * List<Object></Object>
      */

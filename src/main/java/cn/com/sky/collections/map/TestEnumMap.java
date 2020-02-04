@@ -7,8 +7,8 @@ import org.junit.Test;
 import cn.com.sky.basics.enums.WeekDay;
 
 public class TestEnumMap {
-	@Test
-	public void test() {
-		new EnumMap<>(WeekDay.class);
-	}
+    @Test
+    public void test() {
+        new EnumMap<>(WeekDay.class);
+    }
 }

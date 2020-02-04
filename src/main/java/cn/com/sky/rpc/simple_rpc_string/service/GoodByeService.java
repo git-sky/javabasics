@@ -5,5 +5,5 @@ package cn.com.sky.rpc.simple_rpc_string.service;
  */
 public interface GoodByeService {
 
-	public String sayGoodBye(String name);
+    public String sayGoodBye(String name);
 }

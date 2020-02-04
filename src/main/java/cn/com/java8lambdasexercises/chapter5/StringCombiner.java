@@ -25,7 +25,6 @@ public class StringCombiner {
     }
 
 
-
     public StringCombiner merge(StringCombiner other) {
         if (!other.equals(this)) {
             if (!other.areAtStart() && !this.areAtStart()) {
@@ -37,12 +36,10 @@ public class StringCombiner {
     }
 
 
-
     @Override
     public String toString() {
         return prefix + buIlder.toString() + suffix;
     }
-
 
 
     private boolean areAtStart() {

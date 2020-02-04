@@ -15,7 +15,9 @@ import java.util.Map;
  * RPC框架
  */
 public class RpcFramework {
+    //ServerSocket服务
     private static ServerSocket server = null;
+    //存放导出的服务
     private static Map<String, Object> serviceMap = new HashMap<>();
 
     /**

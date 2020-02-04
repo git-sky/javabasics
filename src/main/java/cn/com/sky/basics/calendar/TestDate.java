@@ -14,85 +14,85 @@ import org.junit.Test;
  *  在开发过程中，通常很多人都习惯使用new Date()来获取当前时间。new Date()所做的事情其实就是调用了System.currentTimeMillis()。
  *  如果仅仅是需要或者毫秒数，那么完全可以使用System.currentTimeMillis()去代替new Date()，效率上会高一点。
  *  如果需要在同一个方法里面多次使用new Date()，通常性能就是这样一点一点地消耗掉。
- *  
+ *
  * </pre>
  */
 public class TestDate {
 
-	@Test
-	public void testGetMillis() {
+    @Test
+    public void testGetMillis() {
 
-		System.out.println(System.currentTimeMillis());
-		System.out.println(new Date().getTime());
-		System.out.println(System.nanoTime());
-	}
+        System.out.println(System.currentTimeMillis());
+        System.out.println(new Date().getTime());
+        System.out.println(System.nanoTime());
+    }
 
-	void test1() {
-		Date date = new Date();
+    void test1() {
+        Date date = new Date();
 
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-		for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 2; i++) {
 
-			Date a = new Date(date.getTime());
+            Date a = new Date(date.getTime());
 
-			System.out.println(a);
+            System.out.println(a);
 
-			System.out.println(sdf.format(date));
+            System.out.println(sdf.format(date));
 
-			long beforeTime = (date.getTime() / 1000) + 60 * 5;
-			date.setTime(beforeTime * 1000);
-			// System.out.println(date.getTime());
-			System.out.println(sdf.format(date));
+            long beforeTime = (date.getTime() / 1000) + 60 * 5;
+            date.setTime(beforeTime * 1000);
+            // System.out.println(date.getTime());
+            System.out.println(sdf.format(date));
 
-			Date b = new Date(date.getTime());
+            Date b = new Date(date.getTime());
 
-			// System.out.println(a);
-			// System.out.println(b);
-			// System.out.println(date.getTime());
+            // System.out.println(a);
+            // System.out.println(b);
+            // System.out.println(date.getTime());
 
-			// System.out.println(date.getTime()+String.valueOf(Math.round(Math.random()*899999+100000)));
+            // System.out.println(date.getTime()+String.valueOf(Math.round(Math.random()*899999+100000)));
 
-		}
+        }
 
-	}
+    }
 
-	void test2() {
+    void test2() {
 
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-		Calendar c = Calendar.getInstance();
+        Calendar c = Calendar.getInstance();
 
-		Date date = new Date();
-		System.out.println(sdf.format(date));
-		System.out.println(date.getTime());
+        Date date = new Date();
+        System.out.println(sdf.format(date));
+        System.out.println(date.getTime());
 
-		long beforeTime = (date.getTime()) - 24 * 60 * 60 * 1000;
-		date.setTime(beforeTime);
-		System.out.println(date.getTime());
-		System.out.println(sdf.format(date));
+        long beforeTime = (date.getTime()) - 24 * 60 * 60 * 1000;
+        date.setTime(beforeTime);
+        System.out.println(date.getTime());
+        System.out.println(sdf.format(date));
 
-	}
+    }
 
-	void test3() {
+    void test3() {
 
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
-		try {
-			System.out.println(sdf.parse("2013-12-12 22:22:22:999"));
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-	}
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
+        try {
+            System.out.println(sdf.parse("2013-12-12 22:22:22:999"));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 
-	void test4() {
-		Date d = new Date();
-		Date date = new Date();
-		long beforeTime = date.getTime() - 1 * 60 * 1000;
-		d.setTime(beforeTime);
+    void test4() {
+        Date d = new Date();
+        Date date = new Date();
+        long beforeTime = date.getTime() - 1 * 60 * 1000;
+        d.setTime(beforeTime);
 
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
-		System.out.println(sdf.format(d));
-		System.out.println(sdf.format(date));
-	}
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
+        System.out.println(sdf.format(d));
+        System.out.println(sdf.format(date));
+    }
 
 }

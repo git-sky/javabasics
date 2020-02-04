@@ -107,7 +107,7 @@ public class DateTest {
         String date1 = "20161113";
         LocalDate localDate = LocalDate.parse(date1, DateTimeFormatter.BASIC_ISO_DATE);
         System.out.println(localDate);
-        
+
         DateTimeFormatter mySelfFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String date2 = "2016-11-13";
         LocalDate localDate2 = LocalDate.parse(date2, mySelfFormatter);

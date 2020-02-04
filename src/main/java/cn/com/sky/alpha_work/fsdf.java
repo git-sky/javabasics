@@ -21,7 +21,7 @@ public class fsdf {
         // System.out.println(Double.valueOf(f.toString()) == 0);
         // System.out.println(f == 0);
         //
-         System.out.print(UUID.randomUUID().toString());
+        System.out.print(UUID.randomUUID().toString());
 
         System.out.println(3 / 2);
         System.out.println(3.2 / 2);

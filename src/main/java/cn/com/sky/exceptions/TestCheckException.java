@@ -21,7 +21,7 @@ public class TestCheckException {
             } catch (Exception e) {
                 System.out.println("=============");
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("+++++++++++++++++++");
         }
 

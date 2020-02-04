@@ -3,7 +3,7 @@ package cn.com.sky.basics.test_interface;
 
 public interface a {
 
-	Object get();
+    Object get();
 
-	void put();
+    void put();
 }

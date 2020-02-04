@@ -105,8 +105,8 @@ public class TestInteger {
     }
 
     @Test
-    public void tes(){
-        long a=-1;
-        System.out.println(a!=-1);
+    public void tes() {
+        long a = -1;
+        System.out.println(a != -1);
     }
 }

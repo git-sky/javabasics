@@ -11,7 +11,9 @@ public interface FunctionError2 {
 
     default String method3(Integer o1, Boolean o2) {
         return "1";
-    };
+    }
+
+    ;
 
 
 }

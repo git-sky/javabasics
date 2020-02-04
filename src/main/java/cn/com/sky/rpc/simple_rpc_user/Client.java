@@ -11,6 +11,7 @@ import cn.com.sky.rpc.simple_rpc_user.service.User;
 public class Client {
 
     public static void main(String[] args) throws Exception {
+
         HelloService service = RpcFramework.refer(HelloService.class, Util.SERVER_IP, Util.SERVER_PORT);
 
 

@@ -2,40 +2,40 @@ package cn.com.sky.basics.generics;
 
 public class TestGenericA {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		Person p1 = new Person(101);
-		p1.setSsecrecy("芝麻开门");
-		String s = (String) p1.getSecrecy();
-		System.out.println(p1.getId() + "，密码是:" + s);
+        Person p1 = new Person(101);
+        p1.setSsecrecy("芝麻开门");
+        String s = (String) p1.getSecrecy();
+        System.out.println(p1.getId() + "，密码是:" + s);
 
-		Person<Double> p2 = new Person<>(102);
-		p2.setSsecrecy(8700.45);
-		double money = p2.getSecrecy();
-		System.out.println(p2.getId() + "，秘密资金数额:" + money);
-		
-	}
+        Person<Double> p2 = new Person<>(102);
+        p2.setSsecrecy(8700.45);
+        double money = p2.getSecrecy();
+        System.out.println(p2.getId() + "，秘密资金数额:" + money);
 
-	private static final class Person<a> {
+    }
 
-		private final int id;
-		private a secrecy;
+    private static final class Person<a> {
 
-		public Person(int id) {
-			this.id = id;
-		}
+        private final int id;
+        private a secrecy;
 
-		public int getId() {
-			return id;
-		}
+        public Person(int id) {
+            this.id = id;
+        }
 
-		public void setSsecrecy(a secrecy) {
-			this.secrecy = secrecy;
-		}
+        public int getId() {
+            return id;
+        }
 
-		public a getSecrecy() {
-			return secrecy;
-		}
-	}
+        public void setSsecrecy(a secrecy) {
+            this.secrecy = secrecy;
+        }
+
+        public a getSecrecy() {
+            return secrecy;
+        }
+    }
 
 }

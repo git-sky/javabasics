@@ -1,105 +1,108 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
-	<property name="BASE_LOG_PATH" value="/opt/logs" />
+    <property name="BASE_LOG_PATH" value="/opt/logs"/>
 
-	<!-- warn -->
-	<appender name="warn_file"
-		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-			<level>WARN</level>
-		</filter>
-		<File>${BASE_LOG_PATH}/warn/warn.log</File>
-		<encoder>
-			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} | %p| %m%n%rEx</pattern>
-		</encoder>
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${BASE_LOG_PATH}/warn/warn.log.%d{yyyy-MM-dd}
-			</fileNamePattern>
-		</rollingPolicy>
-	</appender>
+    <!-- warn -->
+    <appender name="warn_file"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+        <File>${BASE_LOG_PATH}/warn/warn.log</File>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} | %p| %m%n%rEx</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${BASE_LOG_PATH}/warn/warn.log.%d{yyyy-MM-dd}
+            </fileNamePattern>
+        </rollingPolicy>
+    </appender>
 
-	<!-- info -->
-	<appender name="info_file"
-		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-			<level>info</level>
-		</filter>
-		<File>${BASE_LOG_PATH}/info/info.log</File>
-		<encoder>
-			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} | %p| %m%n%rEx</pattern>
-		</encoder>
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${BASE_LOG_PATH}/info/info.log.%d{yyyy-MM-dd}
-			</fileNamePattern>
-		</rollingPolicy>
-	</appender>
-	<!-- error -->
-	<appender name="error_file"
-		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-			<level>error</level>
-		</filter>
-		<File>${BASE_LOG_PATH}/error/error.log</File>
-		<encoder>
-			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} | %p| %m%n%rEx</pattern>
-		</encoder>
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${BASE_LOG_PATH}/error/error.log.%d{yyyy-MM-dd}
-			</fileNamePattern>
-		</rollingPolicy>
-	</appender>
+    <!-- info -->
+    <appender name="info_file"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>info</level>
+        </filter>
+        <File>${BASE_LOG_PATH}/info/info.log</File>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} | %p| %m%n%rEx</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${BASE_LOG_PATH}/info/info.log.%d{yyyy-MM-dd}
+            </fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <!-- error -->
+    <appender name="error_file"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>error</level>
+        </filter>
+        <File>${BASE_LOG_PATH}/error/error.log</File>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} | %p| %m%n%rEx</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${BASE_LOG_PATH}/error/error.log.%d{yyyy-MM-dd}
+            </fileNamePattern>
+        </rollingPolicy>
+    </appender>
 
-	<!-- <logger name="warn_log" level="WARN" additivity="false"> <appender-ref 
-		ref="warn_file" /> </logger> <logger name="error_log" level="ERROR" additivity="true"> 
-		<appender-ref ref="error_file" /> </logger> -->
+    <!-- <logger name="warn_log" level="WARN" additivity="false"> <appender-ref
+        ref="warn_file" /> </logger> <logger name="error_log" level="ERROR" additivity="true">
+        <appender-ref ref="error_file" /> </logger> -->
 
-	<!-- Console -->
-	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-		<!-- encoder 默认配置为PatternLayoutEncoder -->
-	 <encoder> <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36}
-		 - %msg%n</pattern> </encoder>
-		<withJansi>true</withJansi>
-    <encoder>
-      <pattern>[%thread] %highlight(%-5level) %cyan(%logger{15}) - %msg %n</pattern>
-    </encoder>
-	</appender>
+    <!-- Console -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoder 默认配置为PatternLayoutEncoder -->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36}
+                - %msg%n
+            </pattern>
+        </encoder>
+        <withJansi>true</withJansi>
+        <encoder>
+            <pattern>[%thread] %highlight(%-5level) %cyan(%logger{15}) - %msg %n</pattern>
+        </encoder>
+    </appender>
 
-	<!-- <logger name="cn.com.sky.tools.logback.demo1" level="INFO" /> -->
-	<!-- <logger name="cn.com.sky.tools.logback.demo1.LogbackDemo" level="INFO" 
-		additivity="true"> <appender-ref ref="info_file" /> </logger> <logger name="cn.com.sky.tools.logback.demo2.LogbackDemo" 
-		level="INFO" additivity="false"> <appender-ref ref="info_file" /> </logger> -->
-
-
-	<!--类的全路径 -->
-	<!-- <logger name="cn.com.sky.tools.LogbackDemo" level="INFO" additivity="true"> 
-		<appender-ref ref="info_file" /> </logger> -->
+    <!-- <logger name="cn.com.sky.tools.logback.demo1" level="INFO" /> -->
+    <!-- <logger name="cn.com.sky.tools.logback.demo1.LogbackDemo" level="INFO"
+        additivity="true"> <appender-ref ref="info_file" /> </logger> <logger name="cn.com.sky.tools.logback.demo2.LogbackDemo"
+        level="INFO" additivity="false"> <appender-ref ref="info_file" /> </logger> -->
 
 
-	<logger name="cn.com.sky.tools" level="warn" additivity="true" />
-	<!-- <logger name="cn.com.sky.tools.logback.demo1" level="INFO" /> -->
+    <!--类的全路径 -->
+    <!-- <logger name="cn.com.sky.tools.LogbackDemo" level="INFO" additivity="true">
+        <appender-ref ref="info_file" /> </logger> -->
 
-	<logger name="cn.com.sky.exceptions" level="info" additivity="true" />
+
+    <logger name="cn.com.sky.tools" level="warn" additivity="true"/>
+    <!-- <logger name="cn.com.sky.tools.logback.demo1" level="INFO" /> -->
+
+    <logger name="cn.com.sky.exceptions" level="info" additivity="true"/>
 
 
-	<root level="WARN">
-		<appender-ref ref="info_file" />
-		<appender-ref ref="warn_file" />
-		<appender-ref ref="error_file" />
-		<appender-ref ref="STDOUT" /> 
-		<appender-ref ref="error_file" />
-	</root>
+    <root level="WARN">
+        <appender-ref ref="info_file"/>
+        <appender-ref ref="warn_file"/>
+        <appender-ref ref="error_file"/>
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="error_file"/>
+    </root>
 
-	<logger name="org.apache.zookeeper" level="ERROR" />
-	<logger name="org.apache.commons.httpclient" level="ERROR" />
-	<!-- spring -->
-	<logger name="org" level="ERROR" />
-	<logger name="org.springframework.web" level="ERROR" />
-	<logger name="org.springframework" level="ERROR" />
+    <logger name="org.apache.zookeeper" level="ERROR"/>
+    <logger name="org.apache.commons.httpclient" level="ERROR"/>
+    <!-- spring -->
+    <logger name="org" level="ERROR"/>
+    <logger name="org.springframework.web" level="ERROR"/>
+    <logger name="org.springframework" level="ERROR"/>
 
-	<!-- mybatis -->
-	<logger name="org.apache.ibatis.jdbc.ScriptRunner" level="ERROR" />
-	<logger name="java.sql.Connection" level="ERROR" />
-	<logger name="java.sql.PreparedStatement" level="ERROR" />
+    <!-- mybatis -->
+    <logger name="org.apache.ibatis.jdbc.ScriptRunner" level="ERROR"/>
+    <logger name="java.sql.Connection" level="ERROR"/>
+    <logger name="java.sql.PreparedStatement" level="ERROR"/>
 
 </configuration>
 

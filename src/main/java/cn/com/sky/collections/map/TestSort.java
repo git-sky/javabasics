@@ -19,7 +19,7 @@ public class TestSort {
 
         List<ShareUrlDto> list = new TestSort().getList(kid, rank, retailId);
 
-        for (ShareUrlDto dto:list){
+        for (ShareUrlDto dto : list) {
             System.out.println(dto.getUserid());
         }
     }

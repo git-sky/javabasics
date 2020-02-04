@@ -23,7 +23,7 @@ public class TestGetDeclaredFields {
             System.out.println("字段" + f.getName() + "访问修饰符是否包括 static:" + Modifier.isStatic(f.getModifiers()));
             System.out.println("字段" + f.getName() + "访问修饰符是否包括 public:" + Modifier.isPublic(f.getModifiers()));
 
-            System.out.println("字段" + f.getName() + "访问修饰符是否包括 final:" +  Modifier.isFinal(f.getModifiers()));
+            System.out.println("字段" + f.getName() + "访问修饰符是否包括 final:" + Modifier.isFinal(f.getModifiers()));
         }
     }
 

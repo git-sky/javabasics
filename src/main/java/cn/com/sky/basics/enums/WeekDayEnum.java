@@ -1,21 +1,20 @@
 package cn.com.sky.basics.enums;
 
 public enum WeekDayEnum {
-	Mon(1), Tue(2), Wed(3), Thu(4), Fri(5), Sat(6), Sun(7);
+    Mon(1), Tue(2), Wed(3), Thu(4), Fri(5), Sat(6), Sun(7);
 
-	private int index;
+    private int index;
 
-	WeekDayEnum(int idx) {
-		this.index = idx;
-	}
+    WeekDayEnum(int idx) {
+        this.index = idx;
+    }
 
-	public int getIndex() {
-		return index;
-	}
+    public int getIndex() {
+        return index;
+    }
 
 
+    public static void main(String[] args) {
 
-	public static void main(String[] args) {
-
-	}
+    }
 }

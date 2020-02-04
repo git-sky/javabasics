@@ -1,4 +1,4 @@
-package cn.com.sky.tools.apache_commons;
+package cn.com.apache_commons;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;

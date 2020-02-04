@@ -9,35 +9,35 @@ import sun.misc.Unsafe;
 @SuppressWarnings("restriction")
 public class TestPrivate implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private static final Unsafe unsafe;
+    private static final Unsafe unsafe;
 
-	static {
-		try {
-			Field f = Unsafe.class.getDeclaredField("theUnsafe");
-			f.setAccessible(true);
-			unsafe = (Unsafe) f.get(null);
+    static {
+        try {
+            Field f = Unsafe.class.getDeclaredField("theUnsafe");
+            f.setAccessible(true);
+            unsafe = (Unsafe) f.get(null);
 
-		} catch (Exception e) {
-			throw new AssertionError(e);
-		}
-	}
+        } catch (Exception e) {
+            throw new AssertionError(e);
+        }
+    }
 
-	public static void main(String[] args) throws NoSuchFieldException, SecurityException {
-		
-		Guard guard = new Guard();
-		guard.giveAccess();   // false, no access
-		System.out.println(guard.giveAccess());
+    public static void main(String[] args) throws NoSuchFieldException, SecurityException {
 
-		// bypass
-		Field f = guard.getClass().getDeclaredField("ACCESS_ALLOWED");
-		unsafe.putInt(guard, unsafe.objectFieldOffset(f), 42); // memory corruption
+        Guard guard = new Guard();
+        guard.giveAccess();   // false, no access
+        System.out.println(guard.giveAccess());
 
-		guard.giveAccess(); // true, access granted
-		System.out.println(guard.giveAccess());
+        // bypass
+        Field f = guard.getClass().getDeclaredField("ACCESS_ALLOWED");
+        unsafe.putInt(guard, unsafe.objectFieldOffset(f), 42); // memory corruption
 
-	}
+        guard.giveAccess(); // true, access granted
+        System.out.println(guard.giveAccess());
+
+    }
 
 }
 

@@ -7,19 +7,19 @@ import java.util.ArrayDeque;
  */
 public class TestArrayDeque {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		ArrayDeque<String> ad = new ArrayDeque<>();
+        ArrayDeque<String> ad = new ArrayDeque<>();
 
-		ad.add("a");
-		ad.addFirst("b");
-		ad.addLast("c");
+        ad.add("a");
+        ad.addFirst("b");
+        ad.addLast("c");
 
-		System.out.println(ad);
+        System.out.println(ad);
 
-		ad.getFirst();
-		ad.getLast();
+        ad.getFirst();
+        ad.getLast();
 
-	}
+    }
 
 }

@@ -45,6 +45,12 @@ public class TestIterator {
             System.out.println(it.next());
         }
 
+        //java.util.ConcurrentModificationException
+//        for (String a : list) {
+//            list.remove(a);
+//        }
+
+
     }
 
     @Test

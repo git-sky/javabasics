@@ -22,7 +22,7 @@ public class TestFloat {
     }
 
     @Test
-    public void tesf(){
-        System.out.println(0.3-0.2);
+    public void tesf() {
+        System.out.println(0.3 - 0.2);
     }
 }

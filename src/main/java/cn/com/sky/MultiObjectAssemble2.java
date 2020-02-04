@@ -38,10 +38,7 @@ public class MultiObjectAssemble2 {
 
         System.out.println(JsonUtils.object2Json(parentList));
 
-        Parent parent=new Parent();
-
-
-
+        Parent parent = new Parent();
 
 
     }

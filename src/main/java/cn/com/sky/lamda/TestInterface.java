@@ -44,7 +44,7 @@ public class TestInterface {
                 return y;
             }
         };
-        System.out.println(mMaxListener.doMathOperator(3,2));
+        System.out.println(mMaxListener.doMathOperator(3, 2));
 
 
     }

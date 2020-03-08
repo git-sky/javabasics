@@ -58,7 +58,7 @@ public class TestBigDecimalRound {
          * 舍入远离零的舍入模式。 在丢弃非零部分之前始终增加数字(始终对非零舍弃部分前面的数字加1)。 注意，此舍入模式始终不会减少计算值的大小。
          */
         BigDecimal b = new BigDecimal("2.351");
-        float f1 = b.setScale(2, BigDecimal.ROUND_UP).floatValue();
+        float f1 = b.setScale(0, BigDecimal.ROUND_UP).floatValue();
         System.out.println("ROUND_UP===" + f1);
     }
 

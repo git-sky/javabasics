@@ -1,4 +1,4 @@
-package cn.com.sky.aviator;
+package cn.com.aviator;
 
 import com.googlecode.aviator.AviatorEvaluator;
 import com.googlecode.aviator.Expression;

@@ -107,11 +107,17 @@ public class DESUtil {
     }
 
     public static void main(String[] args) throws Exception {
-        String source = "abcdefgh";
+
+        //加解密密钥
+        String key = "A1B2C3D4E5F60708";
+
+        String source = "abcd1234";
         System.out.println("原文: " + source);
-        String key = "A1B2C3D4E5F60708";//密钥
+
+
         String encryptData = encrypt(source, key);
         System.out.println("加密后: " + encryptData);
+
         String decryptData = decrypt(encryptData, key);
         System.out.println("解密后: " + decryptData);
     }

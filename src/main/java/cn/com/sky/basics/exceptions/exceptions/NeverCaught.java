@@ -1,8 +1,11 @@
 package cn.com.sky.basics.exceptions.exceptions;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * 异常链的用武之地：保存异常信息，在抛出另外一个异常的同时不丢失原来的异常。
  */
+@Slf4j
 public class NeverCaught {
 
     static void f() throws ExceptionB {
@@ -24,7 +27,8 @@ public class NeverCaught {
         try {
             g();
         } catch (ExceptionC e) {
-            e.printStackTrace();
+//            e.printStackTrace();
+            log.error("s",e);
         }
     }
 

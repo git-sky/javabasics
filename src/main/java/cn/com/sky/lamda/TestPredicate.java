@@ -11,6 +11,8 @@ public class TestPredicate {
     public void test() {
         Predicate<Integer> predicate = x -> x > 5;
         System.out.println(predicate.test(9));
+
+
     }
 
 }

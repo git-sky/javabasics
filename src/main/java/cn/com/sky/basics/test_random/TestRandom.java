@@ -2,6 +2,7 @@ package cn.com.sky.basics.test_random;
 
 import java.util.Random;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.junit.Test;
 
 /**
@@ -30,6 +31,19 @@ public class TestRandom {
             System.out.println(r2);
         }
     }
+
+    @Test
+    public void testMath2() {
+
+        for (int i = 0; i < 1000; i++) {
+            double r = new Random().nextDouble();// 产生的随机数是0-1之间的一个double
+            System.out.println(r);
+
+            double r2 = new Random().nextDouble();// 产生的随机数是0-1之间的一个double
+            System.out.println(r2);
+        }
+    }
+
 
     // 不带种子：
     // 此种方式将会返回随机的数字，每次运行结果不一样
@@ -77,6 +91,12 @@ public class TestRandom {
             System.out.println(r.nextInt());
             System.out.println(r2.nextInt());
         }
+    }
+
+    @Test
+    public void test() {
+        String s = RandomStringUtils.random(100);
+        System.out.println(s);
     }
 
 }

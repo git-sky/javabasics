@@ -1,0 +1,16 @@
+package cn.com.sky.lamda.supplier;
+
+import java.util.function.Supplier;
+
+public class TestMyStudent {
+
+    public static void main(String[] args) {
+        //创建Supplier容器，声明为MyStudent类型，此时并不会调用对象的构造方法，即不会创建对象。
+        Supplier<MyStudent> sup = MyStudent::new;
+        //调用get()方法，此时会调用对象的构造方法，即获得到真正对象。
+        sup.get();
+        //每次get都会调用构造方法，即获取的对象不同。
+        sup.get();
+    }
+
+}

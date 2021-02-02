@@ -2,6 +2,9 @@ package cn.com.sky.basics.enums;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 所有的枚举都继承自java.lang.Enum类。由于Java不支持多继承，所以枚举对象不能再继承其他类。
  */
@@ -15,6 +18,18 @@ public enum ColorEnum {
     ColorEnum(String name, int index) {
         this.name = name;
         this.index = index;
+    }
+
+    private static final Map<Integer, ColorEnum> map = new HashMap<>();
+
+    static {
+        for (ColorEnum value : ColorEnum.values()) {
+            map.put(value.getIndex(), value);
+        }
+    }
+
+    public static ColorEnum getByIndex(int index) {
+        return map.get(index);
     }
 
     public static String getName(int index) {

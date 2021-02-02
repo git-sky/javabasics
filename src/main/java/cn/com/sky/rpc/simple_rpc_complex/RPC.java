@@ -61,7 +61,7 @@ public class RPC {
             }
         };
 
-        // 创建动态代理
+        // 创建动态代理 （为什么是RPC的ClassLoader？？是不是只要是AppClassLoader都行？？）
         T t = (T) Proxy.newProxyInstance(RPC.class.getClassLoader(), new Class[]{clazz}, handler);
         return t;
     }

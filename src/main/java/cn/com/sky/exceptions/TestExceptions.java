@@ -20,7 +20,7 @@ public class TestExceptions {
         try {
             LOGGER.info("process");
             new Long("abc");
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             /**
              * 这样打印异常
              */

@@ -39,11 +39,11 @@ public class TestSerialversionUID {
      */
     private static void serializeCustomer() throws FileNotFoundException, IOException {
         Customer customer = new Customer("abc", 25);
-        ObjectOutputStream oo = new ObjectOutputStream(new FileOutputStream(new File(FILE_NAME)));
-        oo.writeObject(customer);
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File(FILE_NAME)));
+        oos.writeObject(customer);
         System.out.println("Customer对象序列化成功！");
         System.out.println(customer);
-        oo.close();
+        oos.close();
     }
 
     /**
@@ -70,8 +70,8 @@ class Customer implements Serializable {
     private String name;
     private int age;
 
-    private int height = 0;
-    private int a = 0;
+//    private int height = 0;
+//    private int a = 0;
 
     public Customer(String name, int age) {
         this.name = name;

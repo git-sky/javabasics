@@ -1,7 +1,7 @@
 package cn.com.sky;
 
 
-import cn.com.sky.tools.json.jackson.JsonUtils;
+import cn.com.json_tools.jackson.JsonUtils;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 

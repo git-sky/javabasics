@@ -7,8 +7,11 @@ import java.util.HashMap;
  */
 public class LRUCache<K, V> {
 
+    //缓存大小
     private final int MAX_CACHE_SIZE;
+    //头指针
     private Entry<K, V> first;
+    //尾指针
     private Entry<K, V> last;
 
     private HashMap<K, Entry<K, V>> hashMap;
@@ -103,7 +106,9 @@ public class LRUCache<K, V> {
     }
 
     class Entry<K, V> {
+        //前驱
         public Entry<K, V> pre;
+        //后驱
         public Entry<K, V> next;
         public K key;
         public V value;

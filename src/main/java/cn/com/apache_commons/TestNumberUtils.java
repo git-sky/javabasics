@@ -25,6 +25,10 @@ public class TestNumberUtils {
 //检查给定字符串是否是否只包含数字字符
         NumberUtils.isDigits("abc");//return false
         NumberUtils.isDigits("123");//return true
+        System.out.println(Long.valueOf("001"));
+        int a = 012;
+        System.out.println(a);
+        System.out.println(012);
     }
 
 

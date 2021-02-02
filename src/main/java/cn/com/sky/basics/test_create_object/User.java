@@ -59,6 +59,7 @@ public class User implements Cloneable, Serializable {
         return super.clone();
     }
 
+    @Override
     public boolean equals(Object o) {
         if (this == o)
             return true;

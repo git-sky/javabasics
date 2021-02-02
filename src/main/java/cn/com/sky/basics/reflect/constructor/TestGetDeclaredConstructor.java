@@ -55,10 +55,12 @@ public class TestGetDeclaredConstructor {
             // 获取指定的构造方法
             Constructor c = User.class.getDeclaredConstructor(cls);
             System.out.println(c);
+
+            c.setAccessible(true);
             //实例化
             User target = (User) c.newInstance(" ", "bcd");
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 

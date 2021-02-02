@@ -16,8 +16,7 @@ public class TestForEach {
         //数组转list
         List<String> players = Arrays.asList(atp);
 
-        System.out.println("=================循环方式================");
-
+        System.out.println("=================传统循环方式================");
         // 以前的循环方式
         for (String player : players) {
             System.out.println(player + "; ");

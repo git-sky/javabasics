@@ -29,6 +29,7 @@ public class TestGetConstructor {
             System.out.println(c);
             //实例化
             Target target = (Target) c.newInstance("abc", 123);
+            System.out.println(target);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -52,12 +53,15 @@ public class TestGetConstructor {
         try {
             Class cls[] = new Class[]{String.class, String.class};
             // 获取指定的构造方法
+            //private的访问不了
             Constructor c = Target.class.getConstructor(cls);
             System.out.println(c);
             //实例化
             Target target = (Target) c.newInstance("abc", "bcd");
+            System.out.println(target);
         } catch (Exception e) {
             System.out.println(e);
+            e.printStackTrace();
         }
     }
 

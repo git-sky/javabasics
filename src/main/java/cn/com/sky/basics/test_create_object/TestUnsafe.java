@@ -12,7 +12,6 @@ import sun.misc.Unsafe;
  *
  * </pre>
  */
-@SuppressWarnings("restriction")
 public class TestUnsafe {
 
     private static final Unsafe unsafe;

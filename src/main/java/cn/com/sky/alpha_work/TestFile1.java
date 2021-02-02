@@ -62,7 +62,6 @@ public class TestFile1 {
                 }
             }
         }
-
         return clist;
     }
 

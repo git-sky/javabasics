@@ -1,0 +1,291 @@
+package cn.com.a_temp;
+
+public class Main {
+
+    public static void main(String[] args) {
+        String s = "mgcId\n" +
+                "\n" +
+                "玩家id\n" +
+                "\n" +
+                "avatarUrl\n" +
+                "\n" +
+                "玩家头像\n" +
+                "\n" +
+                "nickName\n" +
+                "\n" +
+                "玩家昵称\n" +
+                "\n" +
+                "playerId\n" +
+                "\n" +
+                "账号id\n" +
+                "\n" +
+                "roleId\n" +
+                "\n" +
+                "角色id\n" +
+                "\n" +
+                "areaId\n" +
+                "\n" +
+                "大区id\n" +
+                "\n" +
+                "areaSubId\n" +
+                "\n" +
+                "服务器id\n" +
+                "\n" +
+                "lastLoginTime\n" +
+                "\n" +
+                "上一次登录时间戳\n" +
+                "\n" +
+                "last2LoginTime\n" +
+                "\n" +
+                "上上一次登录时间戳\n" +
+                "\n" +
+                "lockCode\n" +
+                "\n" +
+                "锁定code\n" +
+                "\n" +
+                "lockDesc\n" +
+                "\n" +
+                "锁定原因\n" +
+                "\n" +
+                "lockExpireTime\n" +
+                "\n" +
+                "锁定解除时间戳\n" +
+                "\n" +
+                "id\n" +
+                "\n" +
+                "任务id\n" +
+                "\n" +
+                "status\n" +
+                "\n" +
+                "任务状态\n" +
+                "\n" +
+                "process\n" +
+                "\n" +
+                "任务进度\n" +
+                "\n" +
+                "dailyFinishTimes\n" +
+                "\n" +
+                "当天完成次数\n" +
+                "\n" +
+                "dailyRewardTimes\n" +
+                "\n" +
+                "当天领奖次数\n" +
+                "\n" +
+                "taskBaseInfo\n" +
+                "\n" +
+                "任务显示配置\n" +
+                "\n" +
+                "extraContent\n" +
+                "\n" +
+                "扩展信息（取决于具体业务）\n" +
+                "\n" +
+                "viewTitle\n" +
+                "\n" +
+                "标题\n" +
+                "\n" +
+                "viewContent\n" +
+                "\n" +
+                "内容\n" +
+                "\n" +
+                "viewProcessName\n" +
+                "\n" +
+                "进度名称\n" +
+                "\n" +
+                "viewTips\n" +
+                "\n" +
+                "提示\n" +
+                "\n" +
+                "viewJumpUrl\n" +
+                "\n" +
+                "任务跳转url\n" +
+                "\n" +
+                "mgcId\n" +
+                "\n" +
+                "玩家平台ID\n" +
+                "\n" +
+                "friendMgcId\n" +
+                "\n" +
+                "目标玩家平台ID\n" +
+                "\n" +
+                "focusType\n" +
+                "\n" +
+                "关注类型\n" +
+                "\n" +
+                "friendType\n" +
+                "\n" +
+                "关系类型\n" +
+                "\n" +
+                "groupType\n" +
+                "\n" +
+                "分组\n" +
+                "\n" +
+                "intimacy\n" +
+                "\n" +
+                "亲密度\n" +
+                "\n" +
+                "extraJsonStr\n" +
+                "\n" +
+                "业务拓展字段\n" +
+                "\n" +
+                "nickName\n" +
+                "\n" +
+                "玩家昵称\n" +
+                "\n" +
+                "avatarUrl\n" +
+                "\n" +
+                "玩家头像\n" +
+                "\n" +
+                "prizeId\n" +
+                "\n" +
+                "奖品id\n" +
+                "\n" +
+                "name\n" +
+                "\n" +
+                "奖品名称\n" +
+                "\n" +
+                "subType\n" +
+                "\n" +
+                "奖品类型：1:外卖券 2:实物 3:金币 4:电池\n" +
+                "\n" +
+                "imgUrl\n" +
+                "\n" +
+                "奖品图片的url\n" +
+                "\n" +
+                "ruleId\n" +
+                "\n" +
+                "兑换规则id\n" +
+                "\n" +
+                "price\n" +
+                "\n" +
+                "奖品原价\n" +
+                "\n" +
+                "sortRank\n" +
+                "\n" +
+                "排序\n" +
+                "\n" +
+                "cshowTags\n" +
+                "\n" +
+                "奖品上的标签\n" +
+                "\n" +
+                "cubeStock\n" +
+                "\n" +
+                "魔方的奖品库存\n" +
+                "\n" +
+                "cubeSendCount\n" +
+                "\n" +
+                "奖品已发放数量\n" +
+                "\n" +
+                "gateTitle\n" +
+                "\n" +
+                "兑换门槛标题\n" +
+                "\n" +
+                "validForCurrentMgcUser\n" +
+                "\n" +
+                "该兑换规则对当前角色是否有效(无效时,兑换按钮置灰)\n" +
+                "\n" +
+                "id\n" +
+                "\n" +
+                "营销id\n" +
+                "\n" +
+                "type\n" +
+                "\n" +
+                "兑换类型：1-折扣兑换\n" +
+                "\n" +
+                "discountPrice\n" +
+                "\n" +
+                "折扣价，该字段仅在兑换类型为折扣兑换时有效\n" +
+                "\n" +
+                "discount\n" +
+                "\n" +
+                "具体折扣\n" +
+                "\n" +
+                "validForCurrentMgcUser\n" +
+                "\n" +
+                "该营销策略对当前角色是否有效\n" +
+                "\n" +
+                "couponValue\n" +
+                "\n" +
+                "券额度\n" +
+                "\n" +
+                "couponTitle\n" +
+                "\n" +
+                "券名称\n" +
+                "\n" +
+                "useCondition\n" +
+                "\n" +
+                "券使用说明\n" +
+                "\n" +
+                "useScope\n" +
+                "\n" +
+                "券使用范围\n" +
+                "\n" +
+                "valiDays\n" +
+                "\n" +
+                "券有效期\n" +
+                "\n" +
+                "validDescription\n" +
+                "\n" +
+                "券有效期描述\n" +
+                "\n" +
+                "couponJumpUrl\n" +
+                "\n" +
+                "券跳转地址\n" +
+                "\n" +
+                "residueValidDay\n" +
+                "\n" +
+                "券剩余有效期\n" +
+                "\n" +
+                "validUntilDay\n" +
+                "\n" +
+                "券有效期至\n" +
+                "\n" +
+                "isValidNow\n" +
+                "\n" +
+                "当前是否还有效\n" +
+                "\n" +
+                "id\n" +
+                "\n" +
+                "兑换日志id\n" +
+                "\n" +
+                "sendTime\n" +
+                "\n" +
+                "兑换币变化事件发生时间\n" +
+                "\n" +
+                "moneyId\n" +
+                "\n" +
+                "兑换币id\n" +
+                "\n" +
+                "moneyValue\n" +
+                "\n" +
+                "兑换币金额\n" +
+                "\n" +
+                "changeType\n" +
+                "\n" +
+                "兑换币变化类型 1:增长 2:消耗\n" +
+                "\n" +
+                "taskTypeDesc\n" +
+                "\n" +
+                "任务类型名称\n";
+
+
+        String[] arrays = s.split("\n\n");
+        System.out.println(arrays.length);
+        for (int i = 0; i < arrays.length; i += 2) {
+            System.out.println(arrays[i] + "：" + arrays[i + 1] + "；");
+        }
+
+
+//        int i = 0;
+//        for (String str : arrays) {
+//            i++;
+//            System.out.print(str);
+//            System.out.println("：");
+//            if (i == 2) {
+//                i = 0;
+//                System.out.println("；");
+//            }
+//        }
+
+//        System.out.println(Arrays.toString(arrays));
+    }
+}

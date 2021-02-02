@@ -24,6 +24,7 @@ public class TestFilter2 {
         System.out.println("source=" + JSON.toJSON(list));
         System.out.println(list);
 
+//s有null，会抛出空指针异常
 //        long count = list.stream().filter(s -> !s.isEmpty()).count();
 //        System.out.println("count=" + count);
 
@@ -31,6 +32,7 @@ public class TestFilter2 {
         System.out.println("count2=" + count2);
 
 
+        //过滤空元素，并且从String转换为Long
         List<Long> afterFilterLists = list.stream().filter(s -> StringUtils.isNotBlank(s)).map(s -> Long.valueOf(s)).collect(Collectors.toList());
         System.out.println("afterFilterLists=" + afterFilterLists);
 

@@ -8,15 +8,24 @@ import lombok.extern.slf4j.Slf4j;
 
 @Data
 @Slf4j
-@ToString
 public class Player {
 
-//    @Getter
+    //    Assert.assertEquals
 //    @Setter
     private int goldAmount;
 
-//    @Getter
+    //    @Getter
 //    @Setter
     private Integer amount;
+
+//    public static void main(String[] args) {
+//
+//        System.exit(0);
+//
+//        Object obj = null;
+//        System.out.println(obj);
+//        log.info("sdfasdf a={}", obj.toString());
+//
+//    }
 
 }

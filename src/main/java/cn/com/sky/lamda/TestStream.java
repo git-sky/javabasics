@@ -14,11 +14,9 @@ import java.util.stream.Stream;
 public class TestStream {
 
 
-    //        一、流的初始化与转换：
+    // 一、流的初始化与转换：
     @Test
     public void startStream() {
-
-
 //        Java中的Stream的所有操作都是针对流的，所以，使用Stream必须要得到Stream对象：
 
 //        1、初始化一个流：
@@ -33,15 +31,12 @@ public class TestStream {
 //        3、集合对象转换为一个流（Collections）：
         List<String> list = Arrays.asList(strArray);
         stream = list.stream();
-
-
     }
 
 
 //
 //    二、流的操作：
 //    流的操作可以归结为几种：
-
 
     //    1、遍历操作(map)：
 //    使用map操作可以遍历集合中的每个对象，并对其进行操作，map之后，用.collect(Collectors.toList())会得到操作后的集合。

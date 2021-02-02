@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TestFilter {
 
@@ -44,6 +45,16 @@ public class TestFilter {
                 .forEach(student -> System.out.println(student.toString()));
 
         System.out.println(list);
+
+
+        System.out.println("--------------------------------------------");
+
+        //filter方式
+        List<MyStudent> list2 = list.stream()
+                .filter(student -> student.getSex().equals("G")).collect(Collectors.toList());
+
+        System.out.println(list);
+        System.out.println(list2);
 
     }
 

@@ -25,7 +25,7 @@ public class GenMain {
 
     static {
         try {
-            TARGET_PATH = new File("").getCanonicalPath() + "/src/test/java/pigeon";
+            TARGET_PATH = new File("").getCanonicalPath() + "/src/test/java/p";
         } catch (IOException e) {
             e.printStackTrace();
         }

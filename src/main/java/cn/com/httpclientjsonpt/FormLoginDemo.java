@@ -7,7 +7,6 @@ import org.apache.commons.httpclient.methods.*;
 /**
  * 用来演示登录表单的示例
  *
- * @author Liudong
  */
 //http://www.iteye.com/login
 //http://58.248.254.37/ReaderStatmanage

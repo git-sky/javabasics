@@ -15,7 +15,6 @@ package cn.com.sky.basics.generics;
  * 2.泛型类:
  * 把范型声明放在类中，不需要每个方法都写强制类型转换。
  */
-
 public class TestGenerics {
 
     public static void main(String[] args) {

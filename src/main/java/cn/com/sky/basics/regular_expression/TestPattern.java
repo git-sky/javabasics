@@ -1,7 +1,11 @@
 package cn.com.sky.basics.regular_expression;
 
+import com.alibaba.fastjson.JSONObject;
+import com.google.common.collect.Lists;
 import org.junit.Test;
 
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -43,4 +47,23 @@ public class TestPattern {
         String s = m.replaceAll("");
         System.out.println(s);
     }
+
+    @Test
+    public void test3() {
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("a", "");
+        jsonObject.put("b", "");
+        jsonObject.put("c", "123");
+
+        List<ParamPattern> bodyParams = Lists.newArrayList(new ParamPattern("a", "^[^\\s]+$"), new ParamPattern("b", ""), new ParamPattern("c", "\\-?[1-9]\\d+"), new ParamPattern("d", "\\-?[1-9]\\d+"));
+        for (ParamPattern param : bodyParams) {
+            if (jsonObject.get(param.getName()) == null) {
+                System.out.println("false");
+            } else {
+                System.out.println(Pattern.matches(param.getPattern(), (String) jsonObject.get(param.getName())));
+            }
+        }
+    }
+
 }

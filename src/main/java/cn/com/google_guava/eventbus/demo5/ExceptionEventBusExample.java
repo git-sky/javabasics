@@ -4,7 +4,8 @@ import com.google.common.eventbus.EventBus;
 
 /**
  * <pre>
- *     在默认情况下，EventBus不会对异常信息进行处理，异常信息也不会终止EventBus的运行，只会简单的打印出异常堆栈信息。可以在EventBus构造函数中传入一个SubscriberExceptionHandler对象来对异常信息进行处理。代码是通过lambda表达式来实现了一个SubscriberExceptionHandler接口。
+ *
+ * 在默认情况下，EventBus不会对异常信息进行处理，异常信息也不会终止EventBus的运行，只会简单的打印出异常堆栈信息。可以在EventBus构造函数中传入一个SubscriberExceptionHandler对象来对异常信息进行处理。代码是通过lambda表达式来实现了一个SubscriberExceptionHandler接口。
  *
  * </pre>
  */

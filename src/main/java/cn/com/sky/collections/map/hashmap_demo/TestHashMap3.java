@@ -1,4 +1,4 @@
-package cn.com.sky.collections.map;
+package cn.com.sky.collections.map.hashmap_demo;
 
 import com.google.common.collect.Maps;
 import org.apache.commons.lang3.StringUtils;

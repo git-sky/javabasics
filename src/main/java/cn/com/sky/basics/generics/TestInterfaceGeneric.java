@@ -1,7 +1,7 @@
 package cn.com.sky.basics.generics;
 
 interface InfoIface<T> { // 在接口上定义泛型
-    public T getVar(); // 定义抽象方法，抽象方法的返回值就是泛型类型
+    T getVar(); // 定义抽象方法，抽象方法的返回值就是泛型类型
 }
 
 class InfoImpl<T> implements InfoIface<T> { // 定义泛型接口的子类

@@ -20,7 +20,5 @@ public class DeadEventBusExample {
         eventBus.register(deadEventListener);
         eventBus.post("DeadEventListener event");
         eventBus.post(new DeadEvent("abc", "123"));
-
-
     }
 }

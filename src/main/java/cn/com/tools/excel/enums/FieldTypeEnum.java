@@ -10,8 +10,6 @@ import java.util.Map;
 /**
  * 字段类型枚举
  *
- * @Author jialiangliu
- * @date Date : 2019年11月13日 5:47 PM
  */
 @SuppressWarnings("AlibabaEnumConstantsMustHaveComment")
 public enum FieldTypeEnum {

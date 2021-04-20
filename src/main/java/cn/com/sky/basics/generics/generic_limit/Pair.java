@@ -1,7 +1,8 @@
-package cn.com.sky.basics.generics;
+package cn.com.sky.basics.generics.generic_limit;
 
 
 public class Pair<T> {
+
     private T first;
     private T second;
 

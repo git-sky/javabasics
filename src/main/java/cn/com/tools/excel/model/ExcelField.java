@@ -14,8 +14,6 @@ import java.util.List;
 /**
  * excel字段
  *
- * @Author jialiangliu
- * @date Date : 2019年11月01日 3:17 PM
  */
 @Data
 @Builder

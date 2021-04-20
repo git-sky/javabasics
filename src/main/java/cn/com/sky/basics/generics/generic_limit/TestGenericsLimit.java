@@ -1,4 +1,4 @@
-package cn.com.sky.basics.generics;
+package cn.com.sky.basics.generics.generic_limit;
 
 import org.junit.Test;
 

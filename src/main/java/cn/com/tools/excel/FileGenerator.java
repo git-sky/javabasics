@@ -21,9 +21,6 @@ import java.util.Map;
 
 /**
  * 文件生成器
- *
- * @Author jialiangliu
- * @date Date : 2019年11月01日 6:31 PM
  */
 public class FileGenerator {
 
@@ -148,10 +145,10 @@ public class FileGenerator {
     public static void main(String[] args) {
         String[] arrays = {"app_config.xlsx", "package_config.xlsx", "uri_config.xlsx"};
         for (String arr : arrays) {
-            String resourcesPath = "/Users/sky/Downloads/配置中心/" + arr;
+            String resourcesPath = "/Users/sky/Downloads/config/" + arr;
             // targetPath路径后缀一定要有/
-            String targetPath = "/Users/sky/Downloads/配置中心/";
-            String packagePath = "com.sankuai.fe.game.servertree.auto.config";
+            String targetPath = "/Users/sky/Downloads/config/";
+            String packagePath = "com.me.fe.game.auto.config";
             try {
                 ExcelRoot excelRoot = ExcelParser.create(resourcesPath);
                 ExcelRoot classRoot = excelRoot.genClassRoot();

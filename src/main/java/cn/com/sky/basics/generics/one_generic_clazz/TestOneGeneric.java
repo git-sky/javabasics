@@ -1,13 +1,23 @@
-package cn.com.sky.basics.generics;
+package cn.com.sky.basics.generics.one_generic_clazz;
 
-
+/**
+ * 一个泛型类型
+ */
 public class TestOneGeneric {
 
     public static void main(String args[]) {
+        //=== demo1传入String ===//
         Point<String> p = new Point<>();
-        p.setVar("it");
+        p.setVar("abc");
+        String str = p.getVar();
         System.out.println(p.getVar());
         System.out.println(p.getVar().length());
+
+        //=== demo2传入Integer  ===//
+        Point<Integer> pInt = new Point<>();
+        pInt.setVar(123);
+        Integer sInt = pInt.getVar();
+        System.out.println();
     }
 
 }

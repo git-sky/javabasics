@@ -9,7 +9,6 @@ import org.apache.commons.httpclient.methods.GetMethod;
 /**
  * 最简单的HTTP客户端,用来演示通过GET或者POST方式访问某个页面
  *
- * @authorLiudong
  */
 public class TestHttpClient {
     public static void main(String[] args) throws IOException {

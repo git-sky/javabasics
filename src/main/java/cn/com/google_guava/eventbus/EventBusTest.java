@@ -9,6 +9,7 @@ public class EventBusTest {
 
     public static void main(String[] args) {
         EventBus eventBus = new EventBus();
+
         eventBus.register(new EventListener1());
         eventBus.post(1);
         eventBus.post(1L);

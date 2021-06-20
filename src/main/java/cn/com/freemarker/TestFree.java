@@ -17,7 +17,9 @@ public class TestFree {
     public static void main(String[] args) {
         String templateName = "name1";
         String dataMap = "";
-        String templateContent = "";
+
+
+        String templateContent =  "";
 
 
         String s = parseContent(templateName, templateContent, JsonUtils.json2Map(dataMap, true));

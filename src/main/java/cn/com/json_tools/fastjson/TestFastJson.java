@@ -43,13 +43,11 @@ public class TestFastJson {
     public void test1() {
 
         Men men = new Men();
-
         men.set_name("哈哈");
         men.set_age(11);
 
         //传入一个对象，将对象转成JSON字符串。
         String str = JSON.toJSONString(men);
-
         System.out.println(str);
 
         Men m = JSON.parseObject(str, Men.class);
@@ -66,7 +64,6 @@ public class TestFastJson {
     public void test2() {
 
         WoMen w = new WoMen();
-
         w.set_3age(16);
         w.set_3name("老外");
 

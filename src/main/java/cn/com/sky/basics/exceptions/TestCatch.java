@@ -3,7 +3,6 @@ package cn.com.sky.basics.exceptions;
 public class TestCatch {
 
     public static void main(String ars[]) {
-
         // 最终的值，是return的值，不是fianlly中的值。
         System.out.println("result=" + new TestCatch().test());
 

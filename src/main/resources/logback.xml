@@ -81,7 +81,7 @@
     <logger name="cn.com.sky.tools" level="warn" additivity="true"/>
     <!-- <logger name="cn.com.sky.tools.logback.demo1" level="INFO" /> -->
 
-    <logger name="cn.com.sky.exceptions" level="info" additivity="true"/>
+    <logger name="cn.com.sky.basics.exceptions.demo1" level="info" additivity="true"/>
 
 
     <root level="WARN">

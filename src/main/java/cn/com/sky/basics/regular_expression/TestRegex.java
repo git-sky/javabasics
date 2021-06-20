@@ -13,8 +13,10 @@ public class TestRegex {
 
     @Test
     public void test1() {
-        String s="www.baidu.com";
-        System.out.println(s.matches("w"));
+//        String s="www.baidu.com";
+//        System.out.println(s.matches("w"));
+
+        System.out.println(isRegex("\"2ad22ac6cd7c4197898ed9b10896f917\""));
     }
 
 
